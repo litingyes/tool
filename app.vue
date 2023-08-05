@@ -44,7 +44,7 @@ function switchTheme(e: MouseEvent) {
       dark="border-slate-700"
     >
       <NuxtLink to="/">
-        <span class="text-xl font-semibold">Nuxt Starter</span>
+        <span class="text-xl font-semibold">Tool</span>
       </NuxtLink>
       <div class="cursor-pointer" @click="switchTheme">
         <UIcon v-show="colorMode.value === 'light'" class="text-2xl" name="i-ic-outline-light-mode" />
