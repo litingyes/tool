@@ -1,0 +1,71 @@
+{
+  "name": "nuxt-starter",
+  "description": "A nuxt project startup template",
+  "author": "liting-yes <luz.liting@gmail.com> (https://liting.ink/)",
+  "license": "MIT",
+  "homepage": "https://github.com/liting-yes/nuxt-starter#readme",
+  "bugs": {
+    "url": "https://github.com/liting-yes/nuxt-starter/issues"
+  },
+  "keywords": [
+    "nuxt",
+    "template",
+    "starter"
+  ],
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint . && stylelint \"**/*.{css,scss}\"",
+    "format": "eslint --fix . && stylelint --fix \"**/*.{css,scss}\"",
+    "commit": "git add . && git-cz",
+    "prepare": "npx simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.39.8",
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@commitlint/cz-commitlint": "^17.6.7",
+    "@iconify/json": "^2.2.96",
+    "@nuxt/devtools": "^0.7.4",
+    "@nuxt/image-edge": "1.0.0-28101255.bece998",
+    "@nuxthq/ui": "^2.6.0",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/fontaine": "^0.4.1",
+    "@nuxtjs/stylelint-module": "^5.1.0",
+    "@types/node": "^18",
+    "@vueuse/core": "^10.3.0",
+    "@vueuse/nuxt": "^10.3.0",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.46.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "inquirer": "8",
+    "lint-staged": "^13.2.3",
+    "nuxt": "^3.6.5",
+    "nuxt-lodash": "^2.5.0",
+    "sass": "^1.64.1",
+    "simple-git-hooks": "^2.9.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-recommended-scss": "^12.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "typescript": "^5.1.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,vue,json,md}": "eslint --fix"
+  }
+}
