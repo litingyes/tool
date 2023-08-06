@@ -45,7 +45,7 @@ const editor = useEditor({
   ],
   editorProps: {
     attributes: {
-      class: 'prose dark:prose-invert mt-16 focus:outline-none',
+      class: 'prose dark:prose-invert focus:outline-none',
       spellcheck: 'false',
     },
   },
@@ -264,7 +264,7 @@ function saveFile() {
 </script>
 
 <template>
-  <div class="h-full overflow-auto">
+  <div class="h-full">
     <div class="fixed left-56 right-4 z-10 mt-4 flex justify-between">
       <ul class="flex gap-2">
         <li v-for="item in topMeau" :key="item.icon">
@@ -296,7 +296,7 @@ function saveFile() {
       <li>{{ $t('editor.info.characters') }}: {{ editor?.storage.characterCount.characters() }}</li>
       <li>words: {{ editor?.storage.characterCount.words() }}</li>
     </ul>
-    <EditorContent :editor="editor" />
+    <EditorContent class="tiptap overflow-auto" :editor="editor" />
     <UModal v-model="saveFileModalVisible">
       <UCard>
         <UInput v-model="fileName" :placeholder="$t('editor.output.placeHolder')" />
@@ -316,19 +316,27 @@ function saveFile() {
 </template>
 
 <style lang="scss">
-.ProseMirror.prose {
-  ul[data-type="taskList"] {
-    label {
-      margin-top: 0;
-    }
+.tiptap {
+  position: relative;
+  top: 64px;
+  height: calc(100% - 64px);
 
-    div {
-      margin: 0;
-      margin-left: 8px;
-    }
+  .ProseMirror.prose {
+    max-height: calc(100% - 64px);
 
-    p {
-      margin: 0;
+    ul[data-type="taskList"] {
+      label {
+        margin-top: 0;
+      }
+
+      div {
+        margin: 0;
+        margin-left: 8px;
+      }
+
+      p {
+        margin: 0;
+      }
     }
   }
 }
