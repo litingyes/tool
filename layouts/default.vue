@@ -19,7 +19,7 @@ const links = [{
       badge: 'WIP',
     },
     {
-      label: 'TipTap',
+      label: 'Tiptap',
       to: '/editor/tiptap',
       badge: 'WIP',
     },
