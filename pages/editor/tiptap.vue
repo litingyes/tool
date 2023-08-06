@@ -19,6 +19,9 @@ const editor = useEditor({
     },
   },
 })
+onMounted(() => {
+  editor.value?.commands.focus()
+})
 onBeforeUnmount(() => {
   editor.value?.destroy()
 })
