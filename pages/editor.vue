@@ -1,14 +1,14 @@
 <script lang="ts" setup>
 import { EditorContent, useEditor } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
-import CharacterCount from '@tiptap/extension-character-count'
-import Typography from '@tiptap/extension-typography'
-import TaskList from '@tiptap/extension-task-list'
-import TaskItem from '@tiptap/extension-task-item'
+import Underline from '@tiptap/extension-underline'
 import Highlight from '@tiptap/extension-highlight'
 import Superscript from '@tiptap/extension-superscript'
 import Subscript from '@tiptap/extension-subscript'
-import Underline from '@tiptap/extension-underline'
+import TaskList from '@tiptap/extension-task-list'
+import TaskItem from '@tiptap/extension-task-item'
+import CharacterCount from '@tiptap/extension-character-count'
+import Typography from '@tiptap/extension-typography'
 
 const { t } = useI18n()
 
@@ -22,8 +22,14 @@ const editor = useEditor({
         },
       },
     }),
-    CharacterCount,
-    Typography,
+    Underline,
+    Highlight.configure({
+      HTMLAttributes: {
+        class: 'bg-primary-500 dark:bg-primary-400',
+      },
+    }),
+    Superscript,
+    Subscript,
     TaskList.configure({
       HTMLAttributes: {
         class: 'list-none pl-3',
@@ -34,14 +40,8 @@ const editor = useEditor({
         class: 'flex',
       },
     }),
-    Highlight.configure({
-      HTMLAttributes: {
-        class: 'bg-primary-500 dark:bg-primary-400',
-      },
-    }),
-    Superscript,
-    Subscript,
-    Underline,
+    CharacterCount,
+    Typography,
   ],
   editorProps: {
     attributes: {
@@ -161,6 +161,13 @@ const topMeau = computed(() => [
     tooltip: t('editor.tooltip.subscript'),
     event: () => {
       editor.value?.chain().focus().toggleSubscript().run()
+    },
+  },
+  {
+    icon: 'i-lucide-list-todo',
+    tooltip: t('editor.tooltip.taskList'),
+    event: () => {
+      editor.value?.chain().focus().toggleTaskList().run()
     },
   },
 ])

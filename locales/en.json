@@ -17,7 +17,8 @@
       "underline": "underline",
       "highlight": "highlight",
       "superscript": "superscript",
-      "subscript": "subscript"
+      "subscript": "subscript",
+      "taskList": "task list"
     },
     "info": {
       "characters": "characters",
