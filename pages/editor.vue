@@ -25,7 +25,7 @@ const editor = useEditor({
     }),
     TaskItem.configure({
       HTMLAttributes: {
-        class: 'flex items-center',
+        class: 'flex',
       },
     }),
   ],
