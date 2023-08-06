@@ -1,18 +1,9 @@
 <script lang="ts" setup>
 const links = [{
   label: 'Editor',
-  children: [
-    {
-      label: 'BlockSuite',
-      to: '/editor/blocksuite',
-      badge: 'WIP',
-    },
-    {
-      label: 'Tiptap',
-      to: '/editor/tiptap',
-      badge: 'WIP',
-    },
-  ],
+  icon: 'i-material-symbols-edit',
+  to: '/editor',
+  badge: 'WIP',
 }]
 </script>
 
@@ -27,15 +18,6 @@ const links = [{
         target="_blank"
       />
     </div>
-    <UVerticalNavigation :links="links">
-      <template #default="{ link }">
-        <div class="relative w-full text-left">
-          <div class="mb-2">
-            {{ link.label }}
-          </div>
-          <UVerticalNavigation :links="link.children" />
-        </div>
-      </template>
-    </UVerticalNavigation>
+    <UVerticalNavigation :links="links" />
   </div>
 </template>
