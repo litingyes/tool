@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { EditorContent, useEditor } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
+import CharacterCount from '@tiptap/extension-character-count'
 
 const editor = useEditor({
   content: 'Tip Tap',
@@ -12,6 +13,7 @@ const editor = useEditor({
         },
       },
     }),
+    CharacterCount,
   ],
   editorProps: {
     attributes: {
@@ -98,10 +100,19 @@ const topMeau = [
 
 <template>
   <div class="h-full overflow-auto">
-    <ul class="fixed mt-4 flex gap-2">
-      <li v-for="item in topMeau" :key="item.icon">
-        <UButton :icon="item.icon" size="xs" color="primary" square variant="soft" @click="item.event" />
-      </li>
+    <div class="fixed left-56 right-4 mt-4 flex justify-between">
+      <ul class="flex gap-2">
+        <li v-for="item in topMeau" :key="item.icon">
+          <UButton :icon="item.icon" size="xs" variant="soft" square @click="item.event" />
+        </li>
+      </ul>
+      <ul>
+        <li />
+      </ul>
+    </div>
+    <ul class="text-primary-500 dark:text-primary-400 fixed bottom-4 right-4 w-28 text-sm">
+      <li>characters: {{ editor?.storage.characterCount.characters() }}</li>
+      <li>words: {{ editor?.storage.characterCount.words() }}</li>
     </ul>
     <EditorContent spellcheck="false" :editor="editor" />
   </div>

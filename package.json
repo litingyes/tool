@@ -29,6 +29,7 @@
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/fontaine": "^0.4.1",
     "@nuxtjs/stylelint-module": "^5.1.0",
+    "@tiptap/extension-character-count": "^2.0.4",
     "@tiptap/pm": "^2.0.4",
     "@tiptap/starter-kit": "^2.0.4",
     "@tiptap/vue-3": "^2.0.4",
