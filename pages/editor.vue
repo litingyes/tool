@@ -12,7 +12,7 @@ const editor = useEditor({
     StarterKit.configure({
       code: {
         HTMLAttributes: {
-          class: '',
+          class: 'text-primary-500 bg-gray-200 dark:bg-gray-700',
         },
       },
     }),
@@ -32,7 +32,7 @@ const editor = useEditor({
   ],
   editorProps: {
     attributes: {
-      class: 'prose dark:prose-invert mt-16 focus:outline-none prose-code:text-primary-500 prose-code:bg-gray-200 dark:prose-code:bg-gray-700',
+      class: 'prose dark:prose-invert mt-16 focus:outline-none',
     },
   },
 })
