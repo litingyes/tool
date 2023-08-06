@@ -7,6 +7,11 @@ const editor = useEditor({
   extensions: [
     StarterKit,
   ],
+  editorProps: {
+    attributes: {
+      class: 'prose dark:prose-invert m-5 focus:outline-none',
+    },
+  },
 })
 
 onBeforeUnmount(() => {
@@ -15,7 +20,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="h-full">
+  <div class="h-full overflow-auto">
     <EditorContent :editor="editor" />
   </div>
 </template>
