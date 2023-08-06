@@ -144,6 +144,7 @@ function saveFile() {
       title: t('editor.output.success'),
       icon: 'i-mdi-check-circle-outline',
       color: 'green',
+      timeout: 2000,
       ui: {
         title: 'text-green-500',
       },
@@ -156,6 +157,7 @@ function saveFile() {
       title: t('editor.output.failed'),
       icon: 'i-codicon-error',
       color: 'red',
+      timeout: 2000,
       ui: {
         title: 'text-red-500',
       },
