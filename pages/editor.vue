@@ -2,6 +2,7 @@
 import { EditorContent, useEditor } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
 import CharacterCount from '@tiptap/extension-character-count'
+import Typography from '@tiptap/extension-typography'
 
 const editor = useEditor({
   content: 'Tip Tap',
@@ -14,6 +15,7 @@ const editor = useEditor({
       },
     }),
     CharacterCount,
+    Typography,
   ],
   editorProps: {
     attributes: {
