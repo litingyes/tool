@@ -16,10 +16,12 @@ const links = [{
     {
       label: 'BlockSuite',
       to: '/editor/blocksuite',
+      badge: 'WIP',
     },
     {
       label: 'TipTap',
       to: '/editor/tiptap',
+      badge: 'WIP',
     },
   ],
 }]
