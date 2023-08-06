@@ -53,6 +53,9 @@ devDependencies:
   '@tiptap/vue-3':
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/core@2.0.4)(@tiptap/pm@2.0.4)(vue@3.3.4)
+  '@types/file-saver':
+    specifier: ^2.0.5
+    version: 2.0.5
   '@types/node':
     specifier: ^18
     version: 18.17.0
@@ -71,6 +74,9 @@ devDependencies:
   eslint-plugin-tailwindcss:
     specifier: ^3.13.0
     version: 3.13.0(tailwindcss@3.3.3)
+  file-saver:
+    specifier: ^2.0.5
+    version: 2.0.5
   inquirer:
     specifier: '8'
     version: 8.2.5
@@ -2858,6 +2864,10 @@ packages:
 
   /@types/estree@1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
+    dev: true
+
+  /@types/file-saver@2.0.5:
+    resolution: {integrity: sha512-zv9kNf3keYegP5oThGLaPk8E081DFDuwfqjtiTzm6PoxChdJ1raSuADf2YGCVIyrSynLrgc8JWv296s7Q7pQSQ==}
     dev: true
 
   /@types/http-proxy@1.17.11:
@@ -6072,6 +6082,10 @@ packages:
     engines: {node: ^10.12.0 || >=12.0.0}
     dependencies:
       flat-cache: 3.0.4
+    dev: true
+
+  /file-saver@2.0.5:
+    resolution: {integrity: sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==}
     dev: true
 
   /file-type@3.9.0:

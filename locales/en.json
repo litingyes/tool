@@ -5,6 +5,16 @@
     "info": {
       "characters": "characters",
       "words": "words"
+    },
+    "output": {
+      "label": "Output",
+      "placeHolder": "Please input file name",
+      "success": "Output file successed",
+      "failed": "Output file failed"
     }
+  },
+  "form": {
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   }
 }

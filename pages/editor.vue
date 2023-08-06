@@ -96,6 +96,70 @@ const topMeau = [
     },
   },
 ]
+
+const saveFileModalVisible = ref(false)
+const fileName = ref('')
+const { saveHtml, saveJson, saveText } = useFileSave()
+const toast = useToast()
+const { t } = useI18n()
+const saveFileType = ref<'HTML' | 'JSON' | 'TEXT'>()
+const outputList = [
+  {
+    label: 'HTML',
+    event: () => {
+      fileName.value = ''
+      saveFileType.value = 'HTML'
+      saveFileModalVisible.value = true
+    },
+  },
+  {
+    label: 'JSON',
+    event: () => {
+      fileName.value = ''
+      saveFileType.value = 'JSON'
+      saveFileModalVisible.value = true
+    },
+  },
+  {
+    label: 'TEXT',
+    event: () => {
+      fileName.value = ''
+      saveFileType.value = 'TEXT'
+      saveFileModalVisible.value = true
+    },
+  },
+]
+function saveFile() {
+  try {
+    if (saveFileType.value === 'HTML')
+      saveHtml(fileName.value, editor.value?.getHTML() ?? '')
+    else if (saveFileType.value === 'JSON')
+      saveJson(fileName.value, JSON.stringify(editor.value?.getJSON(), null, 2))
+    else
+      saveText(fileName.value, editor.value?.getText() ?? '')
+
+    toast.add({
+      title: t('editor.output.success'),
+      icon: 'i-mdi-check-circle-outline',
+      color: 'green',
+      ui: {
+        title: 'text-green-500',
+      },
+    })
+
+    saveFileModalVisible.value = false
+  }
+  catch (e) {
+    toast.add({
+      title: t('editor.output.failed'),
+      icon: 'i-codicon-error',
+      color: 'red',
+      ui: {
+        title: 'text-red-500',
+      },
+    })
+  }
+}
 </script>
 
 <template>
@@ -107,7 +171,22 @@ const topMeau = [
         </li>
       </ul>
       <ul>
-        <li />
+        <li>
+          <UPopover>
+            <UButton size="xs" variant="outline" :label="$t('editor.output.label')" />
+            <template #panel>
+              <ul class="text-primary-500 dark:text-primary-400 w-16 text-sm">
+                <li
+                  v-for="item in outputList" :key="item.label"
+                  class="hover:bg-primary-50 dark:hover:bg-primary-950 cursor-pointer px-2 py-1 transition-colors"
+                  @click="item.event"
+                >
+                  {{ item.label }}
+                </li>
+              </ul>
+            </template>
+          </UPopover>
+        </li>
       </ul>
     </div>
     <ul class="text-primary-500 dark:text-primary-400 fixed bottom-4 right-4 w-28 text-sm">
@@ -115,5 +194,20 @@ const topMeau = [
       <li>words: {{ editor?.storage.characterCount.words() }}</li>
     </ul>
     <EditorContent spellcheck="false" :editor="editor" />
+    <UModal v-model="saveFileModalVisible">
+      <UCard>
+        <UInput v-model="fileName" :placeholder="$t('editor.output.placeHolder')" />
+        <template #footer>
+          <div class="flex justify-end gap-2">
+            <UButton :disabled="!fileName" @click="saveFile">
+              {{ $t('form.confirm') }}
+            </UButton>
+            <UButton variant="outline" @click="saveFileModalVisible = false">
+              {{ $t('form.cancel') }}
+            </UButton>
+          </div>
+        </template>
+      </UCard>
+    </UModal>
   </div>
 </template>
