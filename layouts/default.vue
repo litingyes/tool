@@ -29,13 +29,14 @@ const links = [{
 
 <template>
   <main class="flex h-screen w-screen">
-    <div class="border-primary-300 dark:border-cool-700 w-52 border-r-2 px-4 py-8">
+    <div class="border-primary-300 w-52 border-r-2 px-4 py-8 dark:border-gray-700">
       <div class="mb-2 flex items-center gap-4 px-3">
         <span class="font-smiley text-xl font-bold">Tool</span>
         <UToggle
           v-model="isDark" off-icon="i-material-symbols-light-mode-outline"
           on-icon="i-material-symbols-dark-mode-outline"
         />
+        <ColorPick />
         <UButton
           icon="i-mdi-github" size="sm" square variant="ghost" to="https://github.com/liting-yes/tool.git"
           target="_blank"

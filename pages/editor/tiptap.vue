@@ -15,7 +15,7 @@ const editor = useEditor({
   ],
   editorProps: {
     attributes: {
-      class: 'prose dark:prose-invert mt-16 focus:outline-none prose-code:before:content-none prose-code:after:content-none prose-code:rounded prose-code:p-1 prose-code:text-primary-500 prose-code:bg-cool-100 dark:prose-code:bg-cool-700',
+      class: 'prose dark:prose-invert mt-16 focus:outline-none prose-code:before:content-none prose-code:after:content-none prose-code:rounded prose-code:p-1 prose-code:text-primary-500 prose-code:bg-gray-100 dark:prose-code:bg-gray-700',
     },
   },
 })
