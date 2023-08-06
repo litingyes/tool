@@ -1,0 +1,10 @@
+{
+  "title": "Tool",
+  "editor": {
+    "label": "Editor",
+    "info": {
+      "characters": "characters",
+      "words": "words"
+    }
+  }
+}

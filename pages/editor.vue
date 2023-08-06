@@ -111,7 +111,7 @@ const topMeau = [
       </ul>
     </div>
     <ul class="text-primary-500 dark:text-primary-400 fixed bottom-4 right-4 w-28 text-sm">
-      <li>characters: {{ editor?.storage.characterCount.characters() }}</li>
+      <li>{{ $t('editor.info.characters') }}: {{ editor?.storage.characterCount.characters() }}</li>
       <li>words: {{ editor?.storage.characterCount.words() }}</li>
     </ul>
     <EditorContent spellcheck="false" :editor="editor" />
