@@ -5,11 +5,17 @@ import StarterKit from '@tiptap/starter-kit'
 const editor = useEditor({
   content: 'Tip Tap',
   extensions: [
-    StarterKit,
+    StarterKit.configure({
+      code: {
+        HTMLAttributes: {
+          class: '',
+        },
+      },
+    }),
   ],
   editorProps: {
     attributes: {
-      class: 'prose dark:prose-invert mt-16 focus:outline-none',
+      class: 'prose dark:prose-invert mt-16 focus:outline-none prose-code:before:content-none prose-code:after:content-none prose-code:rounded prose-code:p-1 prose-code:text-primary-500 prose-code:bg-cool-100 dark:prose-code:bg-cool-700',
     },
   },
 })
