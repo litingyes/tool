@@ -28,7 +28,6 @@ const editor = useEditor({
         class: 'flex items-center',
       },
     }),
-
   ],
   editorProps: {
     attributes: {
