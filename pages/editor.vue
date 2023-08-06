@@ -8,6 +8,7 @@ import TaskItem from '@tiptap/extension-task-item'
 import Highlight from '@tiptap/extension-highlight'
 import Superscript from '@tiptap/extension-superscript'
 import Subscript from '@tiptap/extension-subscript'
+import Underline from '@tiptap/extension-underline'
 
 const { t } = useI18n()
 
@@ -40,6 +41,7 @@ const editor = useEditor({
     }),
     Superscript,
     Subscript,
+    Underline,
   ],
   editorProps: {
     attributes: {
@@ -131,6 +133,13 @@ const topMeau = computed(() => [
     tooltip: t('editor.tooltip.strike'),
     event: () => {
       editor.value?.chain().focus().toggleStrike().run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-format-underlined-rounded',
+    tooltip: t('editor.tooltip.underline'),
+    event: () => {
+      editor.value?.chain().focus().toggleUnderline().run()
     },
   },
   {
