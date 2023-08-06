@@ -100,6 +100,6 @@ const topMeau = [
         <UButton :icon="item.icon" size="xs" color="primary" square variant="soft" @click="item.event" />
       </li>
     </ul>
-    <EditorContent :editor="editor" />
+    <EditorContent spellcheck="false" :editor="editor" />
   </div>
 </template>
