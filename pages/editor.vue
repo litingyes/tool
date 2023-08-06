@@ -7,6 +7,8 @@ import TaskList from '@tiptap/extension-task-list'
 import TaskItem from '@tiptap/extension-task-item'
 import Highlight from '@tiptap/extension-highlight'
 
+const { t } = useI18n()
+
 const editor = useEditor({
   content: 'Tip Tap',
   extensions: [
@@ -48,86 +50,97 @@ onBeforeUnmount(() => {
   editor.value?.destroy()
 })
 
-const topMeau = [
+const topMeau = computed(() => [
   {
     icon: 'i-healthicons-t',
+    tooltip: t('editor.tooltip.text'),
     event: () => {
       editor.value?.chain().focus().clearNodes().unsetAllMarks().run()
     },
   },
   {
     icon: 'i-material-symbols-format-h1-rounded',
+    tooltip: t('editor.tooltip.h1'),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 1 }).run()
     },
   },
   {
     icon: 'i-material-symbols-format-h2-rounded',
+    tooltip: t('editor.tooltip.h2'),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 2 }).run()
     },
   },
   {
     icon: 'i-material-symbols-format-h3-rounded',
+    tooltip: t('editor.tooltip.h3'),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 3 }).run()
     },
   },
   {
     icon: 'i-material-symbols-format-h4-rounded',
+    tooltip: t('editor.tooltip.h4'),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 4 }).run()
     },
   },
   {
     icon: 'i-material-symbols-format-h5-rounded',
+    tooltip: t('editor.tooltip.h5'),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 5 }).run()
     },
   },
   {
     icon: 'i-material-symbols-format-h6-rounded',
+    tooltip: t('editor.tooltip.h6'),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 6 }).run()
     },
   },
   {
     icon: 'i-material-symbols-format-bold-rounded',
+    tooltip: t('editor.tooltip.bold'),
     event: () => {
       editor.value?.chain().focus().toggleBold().run()
     },
   },
   {
     icon: 'i-material-symbols-format-italic-rounded',
+    tooltip: t('editor.tooltip.italic'),
     event: () => {
       editor.value?.chain().focus().toggleItalic().run()
     },
   },
   {
     icon: 'i-material-symbols-code-blocks-outline-rounded',
+    tooltip: t('editor.tooltip.code'),
     event: () => {
       editor.value?.chain().focus().toggleCode().run()
     },
   },
   {
     icon: 'i-material-symbols-strikethrough-s-rounded',
+    tooltip: t('editor.tooltip.strike'),
     event: () => {
       editor.value?.chain().focus().toggleStrike().run()
     },
   },
   {
     icon: 'i-material-symbols-highlight-outline-rounded',
+    tooltip: t('editor.tooltip.highlight'),
     event: () => {
       editor.value?.chain().focus().toggleHighlight().run()
     },
   },
-]
+])
 
 const saveFileModalVisible = ref(false)
 const fileName = ref('')
 const { saveHtml, saveJson, saveText } = useFileSave()
 const toast = useToast()
-const { t } = useI18n()
 const saveFileType = ref<'HTML' | 'JSON' | 'TEXT'>()
 const outputList = [
   {
@@ -192,10 +205,12 @@ function saveFile() {
 
 <template>
   <div class="h-full overflow-auto">
-    <div class="fixed left-56 right-4 mt-4 flex justify-between">
+    <div class="fixed left-56 right-4 z-10 mt-4 flex justify-between">
       <ul class="flex gap-2">
         <li v-for="item in topMeau" :key="item.icon">
-          <UButton :icon="item.icon" size="xs" variant="soft" square @click="item.event" />
+          <UTooltip :text="item.tooltip">
+            <UButton :icon="item.icon" size="xs" variant="soft" square @click="item.event" />
+          </UTooltip>
         </li>
       </ul>
       <ul>
