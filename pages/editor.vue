@@ -5,6 +5,7 @@ import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
 import TaskList from '@tiptap/extension-task-list'
 import TaskItem from '@tiptap/extension-task-item'
+import Highlight from '@tiptap/extension-highlight'
 
 const editor = useEditor({
   content: 'Tip Tap',
@@ -26,6 +27,11 @@ const editor = useEditor({
     TaskItem.configure({
       HTMLAttributes: {
         class: 'flex',
+      },
+    }),
+    Highlight.configure({
+      HTMLAttributes: {
+        class: 'bg-primary-500 dark:bg-primary-400',
       },
     }),
   ],
@@ -107,6 +113,12 @@ const topMeau = [
     icon: 'i-material-symbols-strikethrough-s-rounded',
     event: () => {
       editor.value?.chain().focus().toggleStrike().run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-highlight-outline-rounded',
+    event: () => {
+      editor.value?.chain().focus().toggleHighlight().run()
     },
   },
 ]
