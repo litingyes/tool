@@ -3,6 +3,8 @@ import { EditorContent, useEditor } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
 import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
+import TaskList from '@tiptap/extension-task-list'
+import TaskItem from '@tiptap/extension-task-item'
 
 const editor = useEditor({
   content: 'Tip Tap',
@@ -16,6 +18,17 @@ const editor = useEditor({
     }),
     CharacterCount,
     Typography,
+    TaskList.configure({
+      HTMLAttributes: {
+        class: 'list-none pl-3',
+      },
+    }),
+    TaskItem.configure({
+      HTMLAttributes: {
+        class: 'flex items-center',
+      },
+    }),
+
   ],
   editorProps: {
     attributes: {
@@ -215,3 +228,22 @@ function saveFile() {
     </UModal>
   </div>
 </template>
+
+<style lang="scss">
+.ProseMirror.prose {
+  ul[data-type="taskList"] {
+    label {
+      margin-top: 0;
+    }
+
+    div {
+      margin: 0;
+      margin-left: 8px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+</style>
