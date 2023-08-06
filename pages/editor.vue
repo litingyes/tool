@@ -40,6 +40,7 @@ const editor = useEditor({
   editorProps: {
     attributes: {
       class: 'prose dark:prose-invert mt-16 focus:outline-none',
+      spellcheck: 'false',
     },
   },
 })
@@ -236,7 +237,7 @@ function saveFile() {
       <li>{{ $t('editor.info.characters') }}: {{ editor?.storage.characterCount.characters() }}</li>
       <li>words: {{ editor?.storage.characterCount.words() }}</li>
     </ul>
-    <EditorContent spellcheck="false" :editor="editor" />
+    <EditorContent :editor="editor" />
     <UModal v-model="saveFileModalVisible">
       <UCard>
         <UInput v-model="fileName" :placeholder="$t('editor.output.placeHolder')" />
