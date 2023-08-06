@@ -325,6 +325,10 @@ function saveFile() {
     max-height: calc(100% - 64px);
 
     ul[data-type="taskList"] {
+      li {
+        padding-left: 0;
+      }
+
       label {
         margin-top: 0;
       }
