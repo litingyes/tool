@@ -14,7 +14,9 @@
       "italic": "italic",
       "code": "code",
       "strike": "strike",
-      "highlight": "highlight"
+      "highlight": "highlight",
+      "superscript": "superscript",
+      "subscript": "subscript"
     },
     "info": {
       "characters": "characters",

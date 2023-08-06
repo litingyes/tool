@@ -14,7 +14,9 @@
       "italic": "斜体",
       "code": "代码行",
       "strike": "删除线",
-      "highlight": "高亮"
+      "highlight": "高亮",
+      "superscript": "上标",
+      "subscript": "下标"
     },
     "info": {
       "characters": "字符数",

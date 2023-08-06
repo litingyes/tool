@@ -6,6 +6,8 @@ import Typography from '@tiptap/extension-typography'
 import TaskList from '@tiptap/extension-task-list'
 import TaskItem from '@tiptap/extension-task-item'
 import Highlight from '@tiptap/extension-highlight'
+import Superscript from '@tiptap/extension-superscript'
+import Subscript from '@tiptap/extension-subscript'
 
 const { t } = useI18n()
 
@@ -36,6 +38,8 @@ const editor = useEditor({
         class: 'bg-primary-500 dark:bg-primary-400',
       },
     }),
+    Superscript,
+    Subscript,
   ],
   editorProps: {
     attributes: {
@@ -134,6 +138,20 @@ const topMeau = computed(() => [
     tooltip: t('editor.tooltip.highlight'),
     event: () => {
       editor.value?.chain().focus().toggleHighlight().run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-superscript-rounded',
+    tooltip: t('editor.tooltip.superscript'),
+    event: () => {
+      editor.value?.chain().focus().toggleSuperscript().run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-subscript-rounded',
+    tooltip: t('editor.tooltip.subscript'),
+    event: () => {
+      editor.value?.chain().focus().toggleSubscript().run()
     },
   },
 ])
