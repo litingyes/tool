@@ -12,16 +12,5 @@ const isDark = computed({
 </script>
 
 <template>
-  <ClientOnly>
-    <UButton variant="ghost" square @click="isDark = !isDark">
-      <UIcon
-        :name="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
-        class="text-primary-500 dark:text-primary-400 h-5 w-5"
-      />
-    </UButton>
-
-    <template #fallback>
-      <div class="h-8 w-8" />
-    </template>
-  </ClientOnly>
+  <UButton :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'" variant="ghost" square size="sm" @click="isDark = !isDark" />
 </template>
