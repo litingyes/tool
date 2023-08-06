@@ -1,21 +1,3 @@
-<script lang="ts" setup>
-const links = [{
-  label: 'Editor',
-  children: [
-    {
-      label: 'BlockSuite',
-      to: '/editor/blocksuite',
-      badge: 'WIP',
-    },
-    {
-      label: 'Tiptap',
-      to: '/editor/tiptap',
-      badge: 'WIP',
-    },
-  ],
-}]
-</script>
-
 <template>
   <main class="flex h-screen w-screen">
     <Sidebar />
