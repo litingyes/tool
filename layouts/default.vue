@@ -17,6 +17,10 @@ const links = [{
       label: 'BlockSuite',
       to: '/editor/blocksuite',
     },
+    {
+      label: 'TipTap',
+      to: '/editor/tiptap',
+    },
   ],
 }]
 </script>
@@ -47,7 +51,7 @@ const links = [{
       </UVerticalNavigation>
     </div>
 
-    <div class="flex-1">
+    <div class="flex-1 overflow-auto p-4">
       <slot />
     </div>
   </main>
