@@ -27,6 +27,22 @@
       "textAlignRight": "右对齐",
       "textAlignJustify": "两侧对齐"
     },
+    "menu": {
+      "table": {
+        "addColumnBefore": "向前插入一列",
+        "addColumnAfter": "向后插入一列",
+        "deleteColumn": "删除当前列",
+        "addRowBefore": "向前插入一行",
+        "addRowAfter": "向后插入一行",
+        "deleteRow": "删除当前行",
+        "deleteTable": "删除当前表格",
+        "mergeCells": "合并单元格",
+        "splitCell": "拆分单元格",
+        "toggleHeaderColumn": "切换头部列",
+        "toggleHeaderRow": "切换头部行",
+        "toggleHeaderCell": "切换头部单元格"
+      }
+    },
     "info": {
       "characters": "字符数",
       "words": "词数"

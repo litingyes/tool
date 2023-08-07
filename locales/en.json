@@ -27,6 +27,22 @@
       "textAlignRight": "right",
       "textAlignJustify": "justify"
     },
+    "menu": {
+      "table": {
+        "addColumnBefore": "add column before",
+        "addColumnAfter": "add column after",
+        "deleteColumn": "delete column",
+        "addRowBefore": "add row before",
+        "addRowAfter": "add row after",
+        "deleteRow": "delete row",
+        "deleteTable": "delete table",
+        "mergeCells": "merge cells",
+        "splitCell": "split cell",
+        "toggleHeaderColumn": "toggle header column",
+        "toggleHeaderRow": "toggle header row",
+        "toggleHeaderCell": "toggle header cell"
+      }
+    },
     "info": {
       "characters": "characters",
       "words": "words"

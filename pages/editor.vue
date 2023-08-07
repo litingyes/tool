@@ -291,13 +291,89 @@ const topMeau = computed(() => [
     tooltip: t('editor.tooltip.table'),
     isActive: editor?.value?.isActive('table'),
     event: () => {
-      editor.value?.chain().focus().insertTable({
-        rows: 3,
-        cols: 5,
-        withHeaderRow: true,
-      }).run()
+      if (!editor?.value?.isActive('table')) {
+        editor.value?.chain().focus().insertTable({
+          rows: 3,
+          cols: 5,
+          withHeaderRow: true,
+        }).run()
+      }
     },
   },
+])
+
+const tableMenu = computed(() => [
+  [{
+    label: t('editor.menu.table.addColumnBefore'),
+    click: () => {
+      editor.value?.chain().focus().addColumnBefore().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.addColumnAfter'),
+    click: () => {
+      editor.value?.chain().focus().addColumnAfter().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.deleteColumn'),
+    click: () => {
+      editor.value?.chain().focus().deleteColumn().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.addRowBefore'),
+    click: () => {
+      editor.value?.chain().focus().addRowBefore().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.addRowAfter'),
+    click: () => {
+      editor.value?.chain().focus().addRowAfter().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.deleteRow'),
+    click: () => {
+      editor.value?.chain().focus().deleteRow().run()
+    },
+  }], [{
+    label: t('editor.menu.table.deleteTable'),
+    click: () => {
+      editor.value?.chain().focus().deleteTable().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.mergeCells'),
+    click: () => {
+      editor.value?.chain().focus().mergeCells().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.splitCell'),
+    click: () => {
+      editor.value?.chain().focus().splitCell().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.toggleHeaderColumn'),
+    click: () => {
+      editor.value?.chain().focus().toggleHeaderColumn().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.toggleHeaderRow'),
+    click: () => {
+      editor.value?.chain().focus().toggleHeaderRow().run()
+    },
+  }],
+  [{
+    label: t('editor.menu.table.toggleHeaderCell'),
+    click: () => {
+      editor.value?.chain().focus().toggleHeaderCell().run()
+    },
+  }],
 ])
 
 const saveFileModalVisible = ref(false)
@@ -371,8 +447,11 @@ function saveFile() {
     <div class="fixed left-56 right-4 z-10 mt-4 flex justify-between">
       <ul class="flex gap-2">
         <li v-for="item in topMeau" :key="item.icon">
-          <UTooltip :text="item.tooltip" :shortcuts="item.shortcuts">
-            <UButton :spellcheck="item.isActive" :icon="item.icon" size="xs" variant="soft" class="transition-colors" :class="[item.isActive && '!bg-primary-200 dark:!bg-primary-800']" square @click="item.event" />
+          <UDropdown v-if="item.icon === 'i-majesticons-table-line'" :items="tableMenu" mode="hover" :disabled="!editor?.isActive('table')" :popper="{ placement: 'bottom-start' }">
+            <UButton :icon="item.icon" size="xs" variant="soft" class="transition-colors" :class="[item.isActive && '!bg-primary-200 dark:!bg-primary-800']" square @click="item.event" />
+          </UDropdown>
+          <UTooltip v-else :text="item.tooltip" :shortcuts="item.shortcuts">
+            <UButton :icon="item.icon" size="xs" variant="soft" class="transition-colors" :class="[item.isActive && '!bg-primary-200 dark:!bg-primary-800']" square @click="item.event" />
           </UTooltip>
         </li>
       </ul>
