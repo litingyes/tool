@@ -14,6 +14,7 @@ import TableRow from '@tiptap/extension-table-row'
 import TextAlign from '@tiptap/extension-text-align'
 import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
+import { isMacOS } from '@tiptap/core'
 
 const { t } = useI18n()
 
@@ -84,10 +85,13 @@ onBeforeUnmount(() => {
   editor.value?.destroy()
 })
 
+const Cmd = isMacOS() ? 'Cmd' : 'Control'
+const Option = isMacOS() ? 'Option' : 'Alt'
 const topMeau = computed(() => [
   {
     icon: 'i-healthicons-t',
     tooltip: t('editor.tooltip.text'),
+    shortcuts: [Cmd, Option, '0'],
     isActive: editor?.value?.isActive('text'),
     event: () => {
       editor.value?.chain().focus().clearNodes().unsetAllMarks().run()
@@ -96,6 +100,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-h1-rounded',
     tooltip: t('editor.tooltip.h1'),
+    shortcuts: [Cmd, Option, '1'],
     isActive: editor?.value?.isActive('heading', { level: 1 }),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 1 }).run()
@@ -104,6 +109,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-h2-rounded',
     tooltip: t('editor.tooltip.h2'),
+    shortcuts: [Cmd, Option, '2'],
     isActive: editor?.value?.isActive('heading', { level: 2 }),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 2 }).run()
@@ -112,6 +118,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-h3-rounded',
     tooltip: t('editor.tooltip.h3'),
+    shortcuts: [Cmd, Option, '3'],
     isActive: editor?.value?.isActive('heading', { level: 3 }),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 3 }).run()
@@ -120,6 +127,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-h4-rounded',
     tooltip: t('editor.tooltip.h4'),
+    shortcuts: [Cmd, Option, '4'],
     isActive: editor?.value?.isActive('heading', { level: 4 }),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 4 }).run()
@@ -128,6 +136,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-h5-rounded',
     tooltip: t('editor.tooltip.h5'),
+    shortcuts: [Cmd, Option, '5'],
     isActive: editor?.value?.isActive('heading', { level: 5 }),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 5 }).run()
@@ -136,6 +145,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-h6-rounded',
     tooltip: t('editor.tooltip.h6'),
+    shortcuts: [Cmd, Option, '6'],
     isActive: editor?.value?.isActive('heading', { level: 6 }),
     event: () => {
       editor.value?.chain().focus().toggleHeading({ level: 6 }).run()
@@ -144,6 +154,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-bold-rounded',
     tooltip: t('editor.tooltip.bold'),
+    shortcuts: [Cmd, 'B'],
     isActive: editor?.value?.isActive('bold'),
     event: () => {
       editor.value?.chain().focus().toggleBold().run()
@@ -152,6 +163,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-italic-rounded',
     tooltip: t('editor.tooltip.italic'),
+    shortcuts: [Cmd, 'I'],
     isActive: editor?.value?.isActive('italic'),
     event: () => {
       editor.value?.chain().focus().toggleItalic().run()
@@ -160,6 +172,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-code-blocks-outline-rounded',
     tooltip: t('editor.tooltip.code'),
+    shortcuts: [Cmd, 'E'],
     isActive: editor?.value?.isActive('code'),
     event: () => {
       editor.value?.chain().focus().toggleCode().run()
@@ -168,6 +181,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-strikethrough-s-rounded',
     tooltip: t('editor.tooltip.strike'),
+    shortcuts: [Cmd, 'Shift', 'X'],
     isActive: editor?.value?.isActive('strike'),
     event: () => {
       editor.value?.chain().focus().toggleStrike().run()
@@ -176,6 +190,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-underlined-rounded',
     tooltip: t('editor.tooltip.underline'),
+    shortcuts: [Cmd, 'U'],
     isActive: editor?.value?.isActive('underline'),
     event: () => {
       editor.value?.chain().focus().toggleUnderline().run()
@@ -184,6 +199,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-highlight-outline-rounded',
     tooltip: t('editor.tooltip.highlight'),
+    shortcuts: [Cmd, 'Shift', 'H'],
     isActive: editor?.value?.isActive('highlight'),
     event: () => {
       editor.value?.chain().focus().toggleHighlight().run()
@@ -192,6 +208,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-superscript-rounded',
     tooltip: t('editor.tooltip.superscript'),
+    shortcuts: [Cmd, '.'],
     isActive: editor?.value?.isActive('superscript'),
     event: () => {
       editor.value?.chain().focus().toggleSuperscript().run()
@@ -200,6 +217,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-subscript-rounded',
     tooltip: t('editor.tooltip.subscript'),
+    shortcuts: [Cmd, ','],
     isActive: editor?.value?.isActive('subscript'),
     event: () => {
       editor.value?.chain().focus().toggleSubscript().run()
@@ -208,6 +226,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-lists-rounded',
     tooltip: t('editor.tooltip.bulletList'),
+    shortcuts: [Cmd, 'Shift', '8'],
     isActive: editor?.value?.isActive('bulletList'),
     event: () => {
       editor.value?.chain().focus().toggleBulletList().run()
@@ -216,6 +235,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-list-numbered-rounded',
     tooltip: t('editor.tooltip.orderedList'),
+    shortcuts: [Cmd, 'Shift', '7'],
     isActive: editor?.value?.isActive('orderedList'),
     event: () => {
       editor.value?.chain().focus().toggleOrderedList().run()
@@ -224,6 +244,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-lucide-list-todo',
     tooltip: t('editor.tooltip.taskList'),
+    shortcuts: [Cmd, 'Shift', '9'],
     isActive: editor?.value?.isActive('taskItem'),
     event: () => {
       editor.value?.chain().focus().toggleTaskList().run()
@@ -244,6 +265,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-align-left-rounded',
     tooltip: t('editor.tooltip.textAlignLeft'),
+    shortcuts: [Cmd, 'Shift', 'L'],
     isActive: editor?.value?.isActive({ textAlign: 'left' }),
     event: () => {
       editor.value?.chain().focus().setTextAlign('left').run()
@@ -252,6 +274,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-align-center-rounded',
     tooltip: t('editor.tooltip.textAlignCenter'),
+    shortcuts: [Cmd, 'Shift', 'E'],
     isActive: editor?.value?.isActive({ textAlign: 'center' }),
     event: () => {
       editor.value?.chain().focus().setTextAlign('center').run()
@@ -260,6 +283,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-align-right-rounded',
     tooltip: t('editor.tooltip.textAlignRight'),
+    shortcuts: [Cmd, 'Shift', 'R'],
     isActive: editor?.value?.isActive({ textAlign: 'right' }),
     event: () => {
       editor.value?.chain().focus().setTextAlign('right').run()
@@ -268,6 +292,7 @@ const topMeau = computed(() => [
   {
     icon: 'i-material-symbols-format-align-justify-rounded',
     tooltip: t('editor.tooltip.textAlignJustify'),
+    shortcuts: [Cmd, 'Shift', 'J'],
     isActive: editor?.value?.isActive({ textAlign: 'justify' }),
     event: () => {
       editor.value?.chain().focus().setTextAlign('justify').run()
@@ -346,7 +371,7 @@ function saveFile() {
     <div class="fixed left-56 right-4 z-10 mt-4 flex justify-between">
       <ul class="flex gap-2">
         <li v-for="item in topMeau" :key="item.icon">
-          <UTooltip :text="item.tooltip">
+          <UTooltip :text="item.tooltip" :shortcuts="item.shortcuts">
             <UButton :icon="item.icon" size="xs" variant="soft" :class="[item.isActive && 'bg-primary-300 dark:bg-primary-700']" square @click="item.event" />
           </UTooltip>
         </li>
