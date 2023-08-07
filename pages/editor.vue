@@ -25,6 +25,11 @@ const editor = useEditor({
           class: 'text-primary-600 bg-gray-200 dark:bg-gray-700',
         },
       },
+      strike: {
+        HTMLAttributes: {
+          class: 'decoration-primary-400 dark:decoration-primary-500',
+        },
+      },
     }),
     Underline,
     Highlight.configure({
