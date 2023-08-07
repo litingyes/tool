@@ -18,11 +18,11 @@
     "prepare": "npx simple-git-hooks"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.40.0",
+    "@antfu/eslint-config": "^0.40.2",
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
     "@commitlint/cz-commitlint": "^17.6.7",
-    "@iconify/json": "^2.2.98",
+    "@iconify/json": "^2.2.99",
     "@nuxt/devtools": "^0.7.5",
     "@nuxt/image-edge": "1.0.0-28101255.bece998",
     "@nuxthq/ui": "^2.7.0",
