@@ -372,7 +372,7 @@ function saveFile() {
       <ul class="flex gap-2">
         <li v-for="item in topMeau" :key="item.icon">
           <UTooltip :text="item.tooltip" :shortcuts="item.shortcuts">
-            <UButton :icon="item.icon" size="xs" variant="soft" :class="[item.isActive && 'bg-primary-300 dark:bg-primary-700']" square @click="item.event" />
+            <UButton :spellcheck="item.isActive" :icon="item.icon" size="xs" variant="soft" class="transition-colors" :class="[item.isActive && '!bg-primary-200 dark:!bg-primary-800']" square @click="item.event" />
           </UTooltip>
         </li>
       </ul>
