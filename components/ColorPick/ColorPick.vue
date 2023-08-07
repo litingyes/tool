@@ -32,7 +32,7 @@ const gray = computed({
   <UPopover>
     <template #default="{ open }">
       <UButton variant="ghost" square :class="[open && 'bg-gray-50 dark:bg-gray-800']">
-        <UIcon name="i-heroicons-swatch-20-solid" class="text-primary-500 dark:text-primary-400 h-5 w-5" />
+        <UIcon name="i-heroicons-swatch-20-solid" class="text-primary-600 dark:text-primary-400 h-5 w-5" />
       </UButton>
     </template>
 

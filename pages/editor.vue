@@ -22,14 +22,14 @@ const editor = useEditor({
     StarterKit.configure({
       code: {
         HTMLAttributes: {
-          class: 'text-primary-500 bg-gray-200 dark:bg-gray-700',
+          class: 'text-primary-600 bg-gray-200 dark:bg-gray-700',
         },
       },
     }),
     Underline,
     Highlight.configure({
       HTMLAttributes: {
-        class: 'bg-primary-500 dark:bg-primary-400',
+        class: 'bg-primary-600 dark:bg-primary-400',
       },
     }),
     Superscript,
@@ -315,7 +315,7 @@ function saveFile() {
           <UPopover>
             <UButton size="xs" variant="outline" :label="$t('editor.output.label')" />
             <template #panel>
-              <ul class="text-primary-500 dark:text-primary-400 w-16 text-sm">
+              <ul class="text-primary-600 dark:text-primary-400 w-16 text-sm">
                 <li
                   v-for="item in outputList" :key="item.label"
                   class="hover:bg-primary-50 dark:hover:bg-primary-950 cursor-pointer px-2 py-1 transition-colors"
@@ -329,7 +329,7 @@ function saveFile() {
         </li>
       </ul>
     </div>
-    <ul class="text-primary-500 dark:text-primary-400 fixed bottom-4 right-4 w-28 text-sm">
+    <ul class="text-primary-600 dark:text-primary-400 fixed bottom-4 right-4 w-28 text-sm">
       <li>{{ $t('editor.info.characters') }}: {{ editor?.storage.characterCount.characters() }}</li>
       <li>words: {{ editor?.storage.characterCount.words() }}</li>
     </ul>
