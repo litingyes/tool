@@ -11,6 +11,7 @@ import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
+import TextAlign from '@tiptap/extension-text-align'
 import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
 
@@ -62,6 +63,9 @@ const editor = useEditor({
       HTMLAttributes: {
         class: 'border-2 border-primary-600 dark:border-primary-400',
       },
+    }),
+    TextAlign.configure({
+      types: ['heading', 'tableHeader', 'tableCell'],
     }),
     CharacterCount,
     Typography,
@@ -235,6 +239,38 @@ const topMeau = computed(() => [
         cols: 5,
         withHeaderRow: true,
       }).run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-format-align-left-rounded',
+    tooltip: t('editor.tooltip.textAlignLeft'),
+    isActive: editor?.value?.isActive({ textAlign: 'left' }),
+    event: () => {
+      editor.value?.chain().focus().setTextAlign('left').run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-format-align-center-rounded',
+    tooltip: t('editor.tooltip.textAlignCenter'),
+    isActive: editor?.value?.isActive({ textAlign: 'center' }),
+    event: () => {
+      editor.value?.chain().focus().setTextAlign('center').run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-format-align-right-rounded',
+    tooltip: t('editor.tooltip.textAlignRight'),
+    isActive: editor?.value?.isActive({ textAlign: 'right' }),
+    event: () => {
+      editor.value?.chain().focus().setTextAlign('right').run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-format-align-justify-rounded',
+    tooltip: t('editor.tooltip.textAlignJustify'),
+    isActive: editor?.value?.isActive({ textAlign: 'justify' }),
+    event: () => {
+      editor.value?.chain().focus().setTextAlign('justify').run()
     },
   },
 ])

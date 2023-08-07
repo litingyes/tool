@@ -21,7 +21,11 @@
       "bulletList": "无序列表",
       "orderedList": "有序列表",
       "taskList": "任务列表",
-      "table": "表格"
+      "table": "表格",
+      "textAlignLeft": "左对齐",
+      "textAlignCenter": "居中对齐",
+      "textAlignRight": "右对齐",
+      "textAlignJustify": "两侧对齐"
     },
     "info": {
       "characters": "字符数",

@@ -21,7 +21,11 @@
       "bulletList": "bullet list",
       "orderedList": "ordered list",
       "taskList": "task list",
-      "table": "table"
+      "table": "table",
+      "textAlignLeft": "left",
+      "textAlignCenter": "center",
+      "textAlignRight": "right",
+      "textAlignJustify": "justify"
     },
     "info": {
       "characters": "characters",

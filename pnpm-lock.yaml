@@ -71,6 +71,9 @@ devDependencies:
   '@tiptap/extension-task-list':
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/core@2.0.4)
+  '@tiptap/extension-text-align':
+    specifier: ^2.0.4
+    version: 2.0.4(@tiptap/core@2.0.4)
   '@tiptap/extension-typography':
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/core@2.0.4)
@@ -2832,6 +2835,14 @@ packages:
 
   /@tiptap/extension-task-list@2.0.4(@tiptap/core@2.0.4):
     resolution: {integrity: sha512-3RGoEgGJdWpGf8aWl7O7+jnnvfpF0or2YHYYvJv13t5G4dNIS9E7QXT3/rU9QtHNYkbcJYFjHligIFuBTAhZNg==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.0.4(@tiptap/pm@2.0.4)
+    dev: true
+
+  /@tiptap/extension-text-align@2.0.4(@tiptap/core@2.0.4):
+    resolution: {integrity: sha512-ArIWhkTqbZFRQcj34Zb17rW1+JeYMAaZpf9LKNAB4CSsqYeF5JqVmrZvOSI7NtyFsEx4rHXMHb1iMKjdwm8fUw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
