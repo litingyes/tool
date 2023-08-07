@@ -115,7 +115,6 @@ const topMeau = computed(() => [
     },
   },
   {
-    name: 'bold',
     icon: 'i-material-symbols-format-bold-rounded',
     tooltip: t('editor.tooltip.bold'),
     isActive: editor?.value?.isActive('bold'),
@@ -124,7 +123,6 @@ const topMeau = computed(() => [
     },
   },
   {
-    name: 'italic',
     icon: 'i-material-symbols-format-italic-rounded',
     tooltip: t('editor.tooltip.italic'),
     isActive: editor?.value?.isActive('italic'),
@@ -133,7 +131,6 @@ const topMeau = computed(() => [
     },
   },
   {
-    name: 'code',
     icon: 'i-material-symbols-code-blocks-outline-rounded',
     tooltip: t('editor.tooltip.code'),
     isActive: editor?.value?.isActive('code'),
@@ -142,7 +139,6 @@ const topMeau = computed(() => [
     },
   },
   {
-    name: 'strike',
     icon: 'i-material-symbols-strikethrough-s-rounded',
     tooltip: t('editor.tooltip.strike'),
     isActive: editor?.value?.isActive('strike'),
@@ -151,7 +147,6 @@ const topMeau = computed(() => [
     },
   },
   {
-    name: 'underline',
     icon: 'i-material-symbols-format-underlined-rounded',
     tooltip: t('editor.tooltip.underline'),
     isActive: editor?.value?.isActive('underline'),
@@ -160,7 +155,6 @@ const topMeau = computed(() => [
     },
   },
   {
-    name: 'highlight',
     icon: 'i-material-symbols-highlight-outline-rounded',
     tooltip: t('editor.tooltip.highlight'),
     isActive: editor?.value?.isActive('highlight'),
@@ -169,7 +163,6 @@ const topMeau = computed(() => [
     },
   },
   {
-    name: 'superscript',
     icon: 'i-material-symbols-superscript-rounded',
     tooltip: t('editor.tooltip.superscript'),
     isActive: editor?.value?.isActive('superscript'),
@@ -178,7 +171,6 @@ const topMeau = computed(() => [
     },
   },
   {
-    name: 'subscript',
     icon: 'i-material-symbols-subscript-rounded',
     tooltip: t('editor.tooltip.subscript'),
     isActive: editor?.value?.isActive('subscript'),
@@ -187,7 +179,22 @@ const topMeau = computed(() => [
     },
   },
   {
-    name: 'taskItem',
+    icon: 'i-material-symbols-lists-rounded',
+    tooltip: t('editor.tooltip.bulletList'),
+    isActive: editor?.value?.isActive('bulletList'),
+    event: () => {
+      editor.value?.chain().focus().toggleBulletList().run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-format-list-numbered-rounded',
+    tooltip: t('editor.tooltip.orderedList'),
+    isActive: editor?.value?.isActive('orderedList'),
+    event: () => {
+      editor.value?.chain().focus().toggleOrderedList().run()
+    },
+  },
+  {
     icon: 'i-lucide-list-todo',
     tooltip: t('editor.tooltip.taskList'),
     isActive: editor?.value?.isActive('taskItem'),

@@ -18,6 +18,8 @@
       "highlight": "highlight",
       "superscript": "superscript",
       "subscript": "subscript",
+      "bulletList": "bullet list",
+      "orderedList": "ordered list",
       "taskList": "task list"
     },
     "info": {

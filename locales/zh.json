@@ -18,6 +18,8 @@
       "highlight": "高亮",
       "superscript": "上标",
       "subscript": "下标",
+      "bulletList": "无序列表",
+      "orderedList": "有序列表",
       "taskList": "任务列表"
     },
     "info": {
