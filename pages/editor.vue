@@ -7,6 +7,10 @@ import Superscript from '@tiptap/extension-superscript'
 import Subscript from '@tiptap/extension-subscript'
 import TaskList from '@tiptap/extension-task-list'
 import TaskItem from '@tiptap/extension-task-item'
+import Table from '@tiptap/extension-table'
+import TableCell from '@tiptap/extension-table-cell'
+import TableHeader from '@tiptap/extension-table-header'
+import TableRow from '@tiptap/extension-table-row'
 import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
 
@@ -38,6 +42,20 @@ const editor = useEditor({
     TaskItem.configure({
       HTMLAttributes: {
         class: 'flex',
+      },
+    }),
+    Table.configure({
+      resizable: true,
+    }),
+    TableRow,
+    TableHeader.configure({
+      HTMLAttributes: {
+        class: 'border-2 bg-primary-100 dark:bg-primary-900 border-primary-600 dark:border-primary-400',
+      },
+    }),
+    TableCell.configure({
+      HTMLAttributes: {
+        class: 'border-2 border-primary-600 dark:border-primary-400',
       },
     }),
     CharacterCount,
@@ -200,6 +218,18 @@ const topMeau = computed(() => [
     isActive: editor?.value?.isActive('taskItem'),
     event: () => {
       editor.value?.chain().focus().toggleTaskList().run()
+    },
+  },
+  {
+    icon: 'i-majesticons-table-line',
+    tooltip: t('editor.tooltip.table'),
+    isActive: editor?.value?.isActive('table'),
+    event: () => {
+      editor.value?.chain().focus().insertTable({
+        rows: 3,
+        cols: 5,
+        withHeaderRow: true,
+      }).run()
     },
   },
 ])

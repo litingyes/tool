@@ -3,8 +3,7 @@ import type { Config } from 'tailwindcss'
 export default <Partial<Config>>{
   theme: {
     extend: {
-      // @ts-expect-error theme type
-      typography: theme => ({
+      typography: () => ({
         DEFAULT: {
           css: {
             'blockquote p:first-of-type::before': {

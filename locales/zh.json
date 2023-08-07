@@ -20,7 +20,8 @@
       "subscript": "下标",
       "bulletList": "无序列表",
       "orderedList": "有序列表",
-      "taskList": "任务列表"
+      "taskList": "任务列表",
+      "table": "表格"
     },
     "info": {
       "characters": "字符数",

@@ -20,7 +20,8 @@
       "subscript": "subscript",
       "bulletList": "bullet list",
       "orderedList": "ordered list",
-      "taskList": "task list"
+      "taskList": "task list",
+      "table": "table"
     },
     "info": {
       "characters": "characters",
