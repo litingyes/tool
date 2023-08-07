@@ -1,17 +1,17 @@
 <script lang="ts" setup>
 import { EditorContent, useEditor } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
-import Underline from '@tiptap/extension-underline'
-import Highlight from '@tiptap/extension-highlight'
-import Superscript from '@tiptap/extension-superscript'
-import Subscript from '@tiptap/extension-subscript'
 import TaskList from '@tiptap/extension-task-list'
 import TaskItem from '@tiptap/extension-task-item'
+import Underline from '@tiptap/extension-underline'
+import Superscript from '@tiptap/extension-superscript'
+import Subscript from '@tiptap/extension-subscript'
+import Highlight from '@tiptap/extension-highlight'
+import TextAlign from '@tiptap/extension-text-align'
 import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
-import TextAlign from '@tiptap/extension-text-align'
 import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
 import { isMacOS } from '@tiptap/core'
@@ -33,14 +33,6 @@ const editor = useEditor({
         },
       },
     }),
-    Underline,
-    Highlight.configure({
-      HTMLAttributes: {
-        class: 'bg-primary-600 dark:bg-primary-400',
-      },
-    }),
-    Superscript,
-    Subscript,
     TaskList.configure({
       HTMLAttributes: {
         class: 'list-none pl-3',
@@ -50,6 +42,17 @@ const editor = useEditor({
       HTMLAttributes: {
         class: 'flex',
       },
+    }),
+    Underline,
+    Superscript,
+    Subscript,
+    Highlight.configure({
+      HTMLAttributes: {
+        class: 'bg-primary-600 dark:bg-primary-400',
+      },
+    }),
+    TextAlign.configure({
+      types: ['heading', 'tableHeader', 'tableCell'],
     }),
     Table.configure({
       resizable: true,
@@ -64,9 +67,6 @@ const editor = useEditor({
       HTMLAttributes: {
         class: 'border-2 border-primary-600 dark:border-primary-400',
       },
-    }),
-    TextAlign.configure({
-      types: ['heading', 'tableHeader', 'tableCell'],
     }),
     CharacterCount,
     Typography,
@@ -152,21 +152,39 @@ const topMeau = computed(() => [
     },
   },
   {
+    icon: 'i-material-symbols-format-list-numbered-rounded',
+    tooltip: t('editor.tooltip.orderedList'),
+    shortcuts: [Cmd, 'Shift', '7'],
+    isActive: editor?.value?.isActive('orderedList'),
+    event: () => {
+      editor.value?.chain().focus().toggleOrderedList().run()
+    },
+  },
+  {
+    icon: 'i-material-symbols-lists-rounded',
+    tooltip: t('editor.tooltip.bulletList'),
+    shortcuts: [Cmd, 'Shift', '8'],
+    isActive: editor?.value?.isActive('bulletList'),
+    event: () => {
+      editor.value?.chain().focus().toggleBulletList().run()
+    },
+  },
+  {
+    icon: 'i-lucide-list-todo',
+    tooltip: t('editor.tooltip.taskList'),
+    shortcuts: [Cmd, 'Shift', '9'],
+    isActive: editor?.value?.isActive('taskItem'),
+    event: () => {
+      editor.value?.chain().focus().toggleTaskList().run()
+    },
+  },
+  {
     icon: 'i-material-symbols-format-bold-rounded',
     tooltip: t('editor.tooltip.bold'),
     shortcuts: [Cmd, 'B'],
     isActive: editor?.value?.isActive('bold'),
     event: () => {
       editor.value?.chain().focus().toggleBold().run()
-    },
-  },
-  {
-    icon: 'i-material-symbols-format-italic-rounded',
-    tooltip: t('editor.tooltip.italic'),
-    shortcuts: [Cmd, 'I'],
-    isActive: editor?.value?.isActive('italic'),
-    event: () => {
-      editor.value?.chain().focus().toggleItalic().run()
     },
   },
   {
@@ -179,12 +197,12 @@ const topMeau = computed(() => [
     },
   },
   {
-    icon: 'i-material-symbols-strikethrough-s-rounded',
-    tooltip: t('editor.tooltip.strike'),
-    shortcuts: [Cmd, 'Shift', 'X'],
-    isActive: editor?.value?.isActive('strike'),
+    icon: 'i-material-symbols-format-italic-rounded',
+    tooltip: t('editor.tooltip.italic'),
+    shortcuts: [Cmd, 'I'],
+    isActive: editor?.value?.isActive('italic'),
     event: () => {
-      editor.value?.chain().focus().toggleStrike().run()
+      editor.value?.chain().focus().toggleItalic().run()
     },
   },
   {
@@ -194,15 +212,6 @@ const topMeau = computed(() => [
     isActive: editor?.value?.isActive('underline'),
     event: () => {
       editor.value?.chain().focus().toggleUnderline().run()
-    },
-  },
-  {
-    icon: 'i-material-symbols-highlight-outline-rounded',
-    tooltip: t('editor.tooltip.highlight'),
-    shortcuts: [Cmd, 'Shift', 'H'],
-    isActive: editor?.value?.isActive('highlight'),
-    event: () => {
-      editor.value?.chain().focus().toggleHighlight().run()
     },
   },
   {
@@ -224,42 +233,21 @@ const topMeau = computed(() => [
     },
   },
   {
-    icon: 'i-material-symbols-lists-rounded',
-    tooltip: t('editor.tooltip.bulletList'),
-    shortcuts: [Cmd, 'Shift', '8'],
-    isActive: editor?.value?.isActive('bulletList'),
+    icon: 'i-material-symbols-highlight-outline-rounded',
+    tooltip: t('editor.tooltip.highlight'),
+    shortcuts: [Cmd, 'Shift', 'H'],
+    isActive: editor?.value?.isActive('highlight'),
     event: () => {
-      editor.value?.chain().focus().toggleBulletList().run()
+      editor.value?.chain().focus().toggleHighlight().run()
     },
   },
   {
-    icon: 'i-material-symbols-format-list-numbered-rounded',
-    tooltip: t('editor.tooltip.orderedList'),
-    shortcuts: [Cmd, 'Shift', '7'],
-    isActive: editor?.value?.isActive('orderedList'),
+    icon: 'i-material-symbols-strikethrough-s-rounded',
+    tooltip: t('editor.tooltip.strike'),
+    shortcuts: [Cmd, 'Shift', 'X'],
+    isActive: editor?.value?.isActive('strike'),
     event: () => {
-      editor.value?.chain().focus().toggleOrderedList().run()
-    },
-  },
-  {
-    icon: 'i-lucide-list-todo',
-    tooltip: t('editor.tooltip.taskList'),
-    shortcuts: [Cmd, 'Shift', '9'],
-    isActive: editor?.value?.isActive('taskItem'),
-    event: () => {
-      editor.value?.chain().focus().toggleTaskList().run()
-    },
-  },
-  {
-    icon: 'i-majesticons-table-line',
-    tooltip: t('editor.tooltip.table'),
-    isActive: editor?.value?.isActive('table'),
-    event: () => {
-      editor.value?.chain().focus().insertTable({
-        rows: 3,
-        cols: 5,
-        withHeaderRow: true,
-      }).run()
+      editor.value?.chain().focus().toggleStrike().run()
     },
   },
   {
@@ -296,6 +284,18 @@ const topMeau = computed(() => [
     isActive: editor?.value?.isActive({ textAlign: 'justify' }),
     event: () => {
       editor.value?.chain().focus().setTextAlign('justify').run()
+    },
+  },
+  {
+    icon: 'i-majesticons-table-line',
+    tooltip: t('editor.tooltip.table'),
+    isActive: editor?.value?.isActive('table'),
+    event: () => {
+      editor.value?.chain().focus().insertTable({
+        rows: 3,
+        cols: 5,
+        withHeaderRow: true,
+      }).run()
     },
   },
 ])
