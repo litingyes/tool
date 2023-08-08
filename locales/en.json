@@ -10,22 +10,22 @@
       "h4": "h4",
       "h5": "h5",
       "h6": "h6",
+      "orderedList": "ordered list",
+      "bulletList": "bullet list",
+      "taskList": "task list",
       "bold": "bold",
-      "italic": "italic",
       "code": "code",
-      "strike": "strike",
+      "italic": "italic",
       "underline": "underline",
-      "highlight": "highlight",
       "superscript": "superscript",
       "subscript": "subscript",
-      "bulletList": "bullet list",
-      "orderedList": "ordered list",
-      "taskList": "task list",
-      "table": "table",
+      "strike": "strike",
+      "highlight": "highlight",
       "textAlignLeft": "left",
       "textAlignCenter": "center",
       "textAlignRight": "right",
-      "textAlignJustify": "justify"
+      "textAlignJustify": "justify",
+      "image": "image"
     },
     "menu": {
       "table": {
@@ -41,6 +41,11 @@
         "toggleHeaderColumn": "toggle header column",
         "toggleHeaderRow": "toggle header row",
         "toggleHeaderCell": "toggle header cell"
+      }
+    },
+    "dialog": {
+      "image": {
+        "title": "Upload Image"
       }
     },
     "info": {

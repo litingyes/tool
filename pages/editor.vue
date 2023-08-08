@@ -12,6 +12,7 @@ import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
+import Image from '@tiptap/extension-image'
 import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
 import { isMacOS } from '@tiptap/core'
@@ -68,6 +69,12 @@ const editor = useEditor({
         class: 'border-2 border-primary-600 dark:border-primary-400',
       },
     }),
+    Image.configure({
+      HTMLAttributes: {
+        class: 'my-2',
+      },
+      allowBase64: true,
+    }),
     CharacterCount,
     Typography,
   ],
@@ -84,6 +91,24 @@ onMounted(() => {
 onBeforeUnmount(() => {
   editor.value?.destroy()
 })
+
+const { upload } = useUpload()
+const uploadImageOpen = ref(false)
+const uploadImageUrl = ref('')
+function uploadImage() {
+  upload('image/*', (data) => {
+    uploadImageUrl.value = data
+  })
+}
+function insertImage() {
+  editor.value?.chain().focus().setImage({ src: uploadImageUrl.value }).run()
+  uploadImageUrl.value = ''
+  uploadImageOpen.value = false
+}
+function closeUploadImageDialog() {
+  uploadImageUrl.value = ''
+  uploadImageOpen.value = false
+}
 
 const Cmd = isMacOS() ? 'Cmd' : 'Control'
 const Option = isMacOS() ? 'Option' : 'Alt'
@@ -288,7 +313,6 @@ const topMeau = computed(() => [
   },
   {
     icon: 'i-majesticons-table-line',
-    tooltip: t('editor.tooltip.table'),
     isActive: editor?.value?.isActive('table'),
     event: () => {
       if (!editor?.value?.isActive('table')) {
@@ -298,6 +322,14 @@ const topMeau = computed(() => [
           withHeaderRow: true,
         }).run()
       }
+    },
+  },
+  {
+    icon: 'i-material-symbols-imagesmode-outline-rounded',
+    tooltip: t('editor.tooltip.image'),
+    isActive: editor?.value?.isActive('table'),
+    event: () => {
+      uploadImageOpen.value = true
     },
   },
 ])
@@ -474,11 +506,44 @@ function saveFile() {
         </li>
       </ul>
     </div>
+    <EditorContent class="tiptap overflow-auto" :editor="editor" />
     <ul class="text-primary-600 dark:text-primary-400 fixed bottom-4 right-4 w-28 text-sm">
       <li>{{ $t('editor.info.characters') }}: {{ editor?.storage.characterCount.characters() }}</li>
       <li>words: {{ editor?.storage.characterCount.words() }}</li>
     </ul>
-    <EditorContent class="tiptap overflow-auto" :editor="editor" />
+    <UModal v-model="uploadImageOpen">
+      <UCard icon="i-ic-round-upload" variant="outline">
+        <template #header>
+          <h1>{{ $t('editor.dialog.image.title') }}</h1>
+        </template>
+        <UInput v-model="uploadImageUrl" :ui="{ icon: { trailing: { pointer: '' } } }">
+          <template #trailing>
+            <UButton
+              variant="link"
+              icon="i-material-symbols-upload-rounded"
+              :padded="false"
+              @click="uploadImage"
+            />
+          </template>
+        </UInput>
+        <template #footer>
+          <div class="flex justify-end gap-2">
+            <UButton
+              variant="solid"
+              @click="insertImage"
+            >
+              {{ $t('form.confirm') }}
+            </UButton>
+            <UButton
+              variant="outline"
+              @click="closeUploadImageDialog"
+            >
+              {{ $t('form.cancel') }}
+            </UButton>
+          </div>
+        </template>
+      </UCard>
+    </UModal>
     <UModal v-model="saveFileModalVisible">
       <UCard>
         <UInput v-model="fileName" :placeholder="$t('editor.output.placeHolder')" />

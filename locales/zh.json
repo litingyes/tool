@@ -10,22 +10,22 @@
       "h4": "四级标题",
       "h5": "五级标题",
       "h6": "六级标题",
+      "orderedList": "有序列表",
+      "bulletList": "无序列表",
+      "taskList": "任务列表",
       "bold": "加粗",
-      "italic": "斜体",
       "code": "代码行",
-      "strike": "删除线",
+      "italic": "斜体",
       "underline": "下划线",
-      "highlight": "高亮",
       "superscript": "上标",
       "subscript": "下标",
-      "bulletList": "无序列表",
-      "orderedList": "有序列表",
-      "taskList": "任务列表",
-      "table": "表格",
+      "strike": "删除线",
+      "highlight": "高亮",
       "textAlignLeft": "左对齐",
       "textAlignCenter": "居中对齐",
       "textAlignRight": "右对齐",
-      "textAlignJustify": "两侧对齐"
+      "textAlignJustify": "两侧对齐",
+      "image": "图片"
     },
     "menu": {
       "table": {
@@ -41,6 +41,11 @@
         "toggleHeaderColumn": "切换头部列",
         "toggleHeaderRow": "切换头部行",
         "toggleHeaderCell": "切换头部单元格"
+      }
+    },
+    "dialog": {
+      "image": {
+        "title": "上传图片"
       }
     },
     "info": {
