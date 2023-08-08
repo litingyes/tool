@@ -112,7 +112,7 @@ function closeUploadImageDialog() {
 
 const Cmd = isMacOS() ? 'Cmd' : 'Control'
 const Option = isMacOS() ? 'Option' : 'Alt'
-const topMeau = computed(() => [
+const topMenu = computed(() => [
   {
     icon: 'i-healthicons-t',
     tooltip: t('editor.tooltip.text'),
@@ -478,7 +478,7 @@ function saveFile() {
   <div class="h-full">
     <div class="fixed left-56 right-4 z-10 mt-4 flex justify-between">
       <ul class="flex gap-2">
-        <li v-for="item in topMeau" :key="item.icon">
+        <li v-for="item in topMenu" :key="item.icon">
           <UDropdown v-if="item.icon === 'i-majesticons-table-line'" :items="tableMenu" mode="hover" :disabled="!editor?.isActive('table')" :popper="{ placement: 'bottom-start' }">
             <UButton :icon="item.icon" size="xs" variant="soft" class="transition-colors" :class="[item.isActive && '!bg-primary-200 dark:!bg-primary-800']" square @click="item.event" />
           </UDropdown>
