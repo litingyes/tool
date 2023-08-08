@@ -501,7 +501,7 @@ function saveFile() {
     <EditorContent class="tiptap overflow-auto" :editor="editor" />
     <ul class="text-primary-600 dark:text-primary-400 fixed bottom-4 right-4 w-28 text-sm">
       <li>{{ $t('editor.info.characters') }}: {{ editor?.storage.characterCount.characters() }}</li>
-      <li>words: {{ editor?.storage.characterCount.words() }}</li>
+      <li>{{ $t('editor.info.words') }}: {{ editor?.storage.characterCount.words() }}</li>
     </ul>
     <UModal v-model="uploadImageOpen">
       <UCard icon="i-ic-round-upload" variant="outline">
