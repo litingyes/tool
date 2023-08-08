@@ -413,31 +413,34 @@ const fileName = ref('')
 const { saveHtml, saveJson, saveText } = useFileSave()
 const toast = useToast()
 const saveFileType = ref<'HTML' | 'JSON' | 'TEXT'>()
-const outputList = [
-  {
+const outputMenu = [
+  [{
     label: 'HTML',
-    event: () => {
+    icon: 'i-logos-html-5',
+    click: () => {
       fileName.value = ''
       saveFileType.value = 'HTML'
       saveFileModalVisible.value = true
     },
-  },
-  {
+  }],
+  [{
     label: 'JSON',
-    event: () => {
+    icon: 'i-vscode-icons-file-type-light-json',
+    clicl: () => {
       fileName.value = ''
       saveFileType.value = 'JSON'
       saveFileModalVisible.value = true
     },
-  },
-  {
+  }],
+  [{
     label: 'TEXT',
-    event: () => {
+    icon: 'i-fluent-text-12-filled',
+    click: () => {
       fileName.value = ''
       saveFileType.value = 'TEXT'
       saveFileModalVisible.value = true
     },
-  },
+  }],
 ]
 function saveFile() {
   try {
@@ -489,20 +492,9 @@ function saveFile() {
       </ul>
       <ul>
         <li>
-          <UPopover>
+          <UDropdown :items="outputMenu" mode="hover" :popper="{ placement: 'bottom-start' }" :ui="{ width: 'w-24' }">
             <UButton size="xs" variant="outline" :label="$t('editor.output.label')" />
-            <template #panel>
-              <ul class="text-primary-600 dark:text-primary-400 w-16 text-sm">
-                <li
-                  v-for="item in outputList" :key="item.label"
-                  class="hover:bg-primary-50 dark:hover:bg-primary-950 cursor-pointer px-2 py-1 transition-colors"
-                  @click="item.event"
-                >
-                  {{ item.label }}
-                </li>
-              </ul>
-            </template>
-          </UPopover>
+          </UDropdown>
         </li>
       </ul>
     </div>
