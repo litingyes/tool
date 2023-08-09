@@ -12,8 +12,8 @@ devDependencies:
     specifier: ^17.6.7
     version: 17.6.7
   '@commitlint/config-conventional':
-    specifier: ^17.6.7
-    version: 17.6.7
+    specifier: ^17.7.0
+    version: 17.7.0
   '@commitlint/cz-commitlint':
     specifier: ^17.7.0
     version: 17.7.0(@types/node@18.17.0)(commitizen@4.3.0)(inquirer@8.2.5)(typescript@5.1.6)
@@ -109,7 +109,7 @@ devDependencies:
     version: 10.3.0(nuxt@3.6.5)(vue@3.3.4)
   commitizen:
     specifier: ^4.3.0
-    version: 4.3.0
+    version: 4.3.0(@types/node@18.17.0)(typescript@5.1.6)
   eslint:
     specifier: ^8.46.0
     version: 8.46.0
@@ -628,11 +628,11 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/config-conventional@17.6.7:
-    resolution: {integrity: sha512-4oTpEUC0HRM54QRHBPMOJW1pETp7usxXn9RuNYNWHcmu8wi1mpws95hvS20u2n6HtIkTn0jfn7vHioCm4AGUTw==}
+  /@commitlint/config-conventional@17.7.0:
+    resolution: {integrity: sha512-iicqh2o6et+9kWaqsQiEYZzfLbtoWv9uZl8kbI8EGfnc0HeGafQBF7AJ0ylN9D/2kj6txltsdyQs8+2fTMwWEw==}
     engines: {node: '>=v14'}
     dependencies:
-      conventional-changelog-conventionalcommits: 5.0.0
+      conventional-changelog-conventionalcommits: 6.1.0
     dev: true
 
   /@commitlint/config-validator@17.6.7:
@@ -654,7 +654,7 @@ packages:
       '@commitlint/load': 17.7.0(@types/node@18.17.0)(typescript@5.1.6)
       '@commitlint/types': 17.4.4
       chalk: 4.1.2
-      commitizen: 4.3.0
+      commitizen: 4.3.0(@types/node@18.17.0)(typescript@5.1.6)
       inquirer: 8.2.5
       lodash.isplainobject: 4.0.6
       word-wrap: 1.2.5
@@ -4730,13 +4730,13 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
-  /commitizen@4.3.0:
+  /commitizen@4.3.0(@types/node@18.17.0)(typescript@5.1.6):
     resolution: {integrity: sha512-H0iNtClNEhT0fotHvGV3E9tDejDeS04sN1veIebsKYGMuGscFaswRoYJKmT3eW85eIJAs0F28bG2+a/9wCOfPw==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
       cachedir: 2.3.0
-      cz-conventional-changelog: 3.3.0
+      cz-conventional-changelog: 3.3.0(@types/node@18.17.0)(typescript@5.1.6)
       dedent: 0.7.0
       detect-indent: 6.1.0
       find-node-modules: 2.1.3
@@ -4750,8 +4750,8 @@ packages:
       strip-bom: 4.0.0
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
+      - '@types/node'
+      - typescript
     dev: true
 
   /commondir@1.0.1:
@@ -4812,13 +4812,11 @@ packages:
       q: 1.5.1
     dev: true
 
-  /conventional-changelog-conventionalcommits@5.0.0:
-    resolution: {integrity: sha512-lCDbA+ZqVFQGUj7h9QBKoIpLhl8iihkO0nCTyRNzuXtcd7ubODpYB04IFy31JloiJgG0Uovu8ot8oxRzn7Nwtw==}
-    engines: {node: '>=10'}
+  /conventional-changelog-conventionalcommits@6.1.0:
+    resolution: {integrity: sha512-3cS3GEtR78zTfMzk0AizXKKIdN4OvSh7ibNz6/DPbhWWQu7LqE/8+/GqSodV+sywUR2gpJAdP/1JFf4XtN7Zpw==}
+    engines: {node: '>=14'}
     dependencies:
       compare-func: 2.0.0
-      lodash: 4.17.21
-      q: 1.5.1
     dev: true
 
   /conventional-commit-types@3.0.0:
@@ -5096,21 +5094,21 @@ packages:
     resolution: {integrity: sha512-d4ZVpCW31eWwCMe1YT3ur7mUDnTXbgwyzaL320DrcRT45rfjYxkt5QWLrmOJ+/UEAI2+fQgKe/fCjR8l4TpRgw==}
     dev: true
 
-  /cz-conventional-changelog@3.3.0:
+  /cz-conventional-changelog@3.3.0(@types/node@18.17.0)(typescript@5.1.6):
     resolution: {integrity: sha512-U466fIzU5U22eES5lTNiNbZ+d8dfcHcssH4o7QsdWaCcRs/feIPCxKYSWkYBNs5mny7MvEfwpTLWjvbm94hecw==}
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.3.0
+      commitizen: 4.3.0(@types/node@18.17.0)(typescript@5.1.6)
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.4
     optionalDependencies:
-      '@commitlint/load': 17.6.7
+      '@commitlint/load': 17.7.0(@types/node@18.17.0)(typescript@5.1.6)
     transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
+      - '@types/node'
+      - typescript
     dev: true
 
   /dargs@7.0.0:
