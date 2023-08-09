@@ -52,12 +52,18 @@
       "characters": "字符数",
       "words": "词数"
     },
+    "import": {
+      "label": "导入",
+      "success": "导入文件成功",
+      "failed": "导入文件失败"
+    },
     "output": {
       "label": "导出",
       "placeHolder": "请输入文件名",
       "success": "导出文件成功",
       "failed": "导出文件失败"
     }
+
   },
   "form": {
     "confirm": "确认",

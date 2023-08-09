@@ -18,6 +18,7 @@ import Typography from '@tiptap/extension-typography'
 import { isMacOS } from '@tiptap/core'
 
 const { t } = useI18n()
+const toast = useToast()
 
 const editor = useEditor({
   content: 'Tip Tap',
@@ -96,8 +97,12 @@ const { upload } = useUpload()
 const uploadImageOpen = ref(false)
 const uploadImageUrl = ref('')
 function uploadImage() {
-  upload('image/*', (data) => {
-    uploadImageUrl.value = data
+  upload({
+    accept: 'image/*',
+    format: 'DATA_URL',
+    cb: (data) => {
+      uploadImageUrl.value = data
+    },
   })
 }
 function insertImage() {
@@ -408,10 +413,67 @@ const tableMenu = computed(() => [
   }],
 ])
 
+const importMenu = [
+  [{
+    label: 'HTML',
+    icon: 'i-logos-html-5',
+    click: () => {
+      upload({
+        accept: '.html',
+        cb: (data) => {
+          editor.value?.commands.setContent(data)
+          toast.add({
+            title: t('editor.import.success'),
+            icon: 'i-mdi-check-circle-outline',
+            color: 'green',
+            timeout: 2000,
+            ui: {
+              title: 'text-green-500',
+            },
+          })
+        },
+      })
+    },
+  }],
+  [{
+    label: 'JSON',
+    icon: 'i-vscode-icons-file-type-light-json',
+    click: () => {
+      upload({
+        accept: '.json',
+        cb: (data) => {
+          try {
+            editor.value?.commands.setContent(JSON.parse(data))
+            toast.add({
+              title: t('editor.import.success'),
+              icon: 'i-mdi-check-circle-outline',
+              color: 'green',
+              timeout: 2000,
+              ui: {
+                title: 'text-green-500',
+              },
+            })
+          }
+          catch (e) {
+            toast.add({
+              title: t('editor.import.failed'),
+              icon: 'i-codicon-error',
+              color: 'red',
+              timeout: 2000,
+              ui: {
+                title: 'text-red-500',
+              },
+            })
+          }
+        },
+      })
+    },
+  }],
+]
+
 const saveFileModalVisible = ref(false)
 const fileName = ref('')
 const { saveHtml, saveJson, saveText } = useFileSave()
-const toast = useToast()
 const saveFileType = ref<'HTML' | 'JSON' | 'TEXT'>()
 const outputMenu = [
   [{
@@ -426,7 +488,7 @@ const outputMenu = [
   [{
     label: 'JSON',
     icon: 'i-vscode-icons-file-type-light-json',
-    clicl: () => {
+    click: () => {
       fileName.value = ''
       saveFileType.value = 'JSON'
       saveFileModalVisible.value = true
@@ -490,7 +552,14 @@ function saveFile() {
           </UTooltip>
         </li>
       </ul>
-      <ul>
+      <ul class="flex gap-2">
+        <li>
+          <UDropdown
+            :items="importMenu" mode="hover" :ui="{ width: 'w-24' }"
+          >
+            <UButton size="xs" variant="outline" :label="$t('editor.import.label')" />
+          </UDropdown>
+        </li>
         <li>
           <UDropdown :items="outputMenu" mode="hover" :popper="{ placement: 'bottom-start' }" :ui="{ width: 'w-24' }">
             <UButton size="xs" variant="outline" :label="$t('editor.output.label')" />

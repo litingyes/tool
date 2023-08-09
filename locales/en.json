@@ -52,6 +52,11 @@
       "characters": "characters",
       "words": "words"
     },
+    "import": {
+      "label": "Import",
+      "success": "Import file succeeded",
+      "failed": "Import file failed"
+    },
     "output": {
       "label": "Output",
       "placeHolder": "Please input file name",
