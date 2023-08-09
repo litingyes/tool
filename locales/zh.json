@@ -44,7 +44,7 @@
         "toggleHeaderCell": "切换头部单元格"
       }
     },
-    "dialog": {
+    "modal": {
       "link": {
         "title": "插入链接",
         "placeholder": "比如：https://tool.liting.ink/",

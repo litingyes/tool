@@ -44,7 +44,7 @@
         "toggleHeaderCell": "toggle header cell"
       }
     },
-    "dialog": {
+    "modal": {
       "link": {
         "title": "Insert Link",
         "placeholder": "such as: https://tool.liting.ink/",

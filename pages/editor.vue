@@ -102,7 +102,7 @@ const insertLinkForm = reactive({
   url: '',
 })
 const insertLinkFormSchema = z.object({
-  url: z.string().url(t('editor.dialog.link.validateErrorMessage')),
+  url: z.string().url(t('editor.modal.link.validateErrorMessage')),
 })
 function insertLinkFormValidate() {
   return insertLinkFormRef.value?.validate()
@@ -136,7 +136,7 @@ function insertImage() {
   uploadImageUrl.value = ''
   uploadImageOpen.value = false
 }
-function closeUploadImageDialog() {
+function closeUploadImageModal() {
   uploadImageUrl.value = ''
   uploadImageOpen.value = false
 }
@@ -609,11 +609,11 @@ function saveFile() {
     <UModal v-model="insertLinkOpen">
       <UCard>
         <template #header>
-          <h1>{{ $t('editor.dialog.link.title') }}</h1>
+          <h1>{{ $t('editor.modal.link.title') }}</h1>
         </template>
         <UForm ref="insertLinkFormRef" :state="insertLinkForm" :schema="insertLinkFormSchema">
           <UFormGroup name="url">
-            <UInput v-model="insertLinkForm.url" :placeholder="t('editor.dialog.link.placeholder')" @input="insertLinkFormRef?.validate" @blur="insertLinkFormRef?.validate" />
+            <UInput v-model="insertLinkForm.url" :placeholder="t('editor.modal.link.placeholder')" @input="insertLinkFormRef?.validate" @blur="insertLinkFormRef?.validate" />
           </UFormGroup>
         </UForm>
         <template #footer>
@@ -637,7 +637,7 @@ function saveFile() {
     <UModal v-model="uploadImageOpen">
       <UCard icon="i-ic-round-upload" variant="outline">
         <template #header>
-          <h1>{{ $t('editor.dialog.image.title') }}</h1>
+          <h1>{{ $t('editor.modal.image.title') }}</h1>
         </template>
         <UInput v-model="uploadImageUrl" :ui="{ icon: { trailing: { pointer: '' } } }">
           <template #trailing>
@@ -659,7 +659,7 @@ function saveFile() {
             </UButton>
             <UButton
               variant="outline"
-              @click="closeUploadImageDialog"
+              @click="closeUploadImageModal"
             >
               {{ $t('form.cancel') }}
             </UButton>
