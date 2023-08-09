@@ -25,6 +25,7 @@
       "textAlignCenter": "居中对齐",
       "textAlignRight": "右对齐",
       "textAlignJustify": "两侧对齐",
+      "link": "链接",
       "image": "图片"
     },
     "menu": {
@@ -44,6 +45,11 @@
       }
     },
     "dialog": {
+      "link": {
+        "title": "插入链接",
+        "placeholder": "比如：https://tool.liting.ink/",
+        "validateErrorMessage": "请输入一个有效链接"
+      },
       "image": {
         "title": "上传图片"
       }

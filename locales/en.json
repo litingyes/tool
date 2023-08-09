@@ -25,6 +25,7 @@
       "textAlignCenter": "center",
       "textAlignRight": "right",
       "textAlignJustify": "justify",
+      "link": "link",
       "image": "image"
     },
     "menu": {
@@ -44,6 +45,11 @@
       }
     },
     "dialog": {
+      "link": {
+        "title": "Insert Link",
+        "placeholder": "such as: https://tool.liting.ink/",
+        "validateErrorMessage": "Please input a valid url"
+      },
       "image": {
         "title": "Upload Image"
       }

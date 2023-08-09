@@ -34,6 +34,7 @@
     "@tiptap/extension-floating-menu": "^2.0.4",
     "@tiptap/extension-highlight": "^2.0.4",
     "@tiptap/extension-image": "^2.0.4",
+    "@tiptap/extension-link": "^2.0.4",
     "@tiptap/extension-subscript": "^2.0.4",
     "@tiptap/extension-superscript": "^2.0.4",
     "@tiptap/extension-table": "^2.0.4",
@@ -63,7 +64,8 @@
     "stylelint": "^15.10.2",
     "stylelint-config-recommended-scss": "^12.0.0",
     "stylelint-config-recommended-vue": "^1.5.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "zod": "^3.21.4"
   },
   "config": {
     "commitizen": {

@@ -12,10 +12,12 @@ import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
+import Link from '@tiptap/extension-link'
 import Image from '@tiptap/extension-image'
 import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
 import { isMacOS } from '@tiptap/core'
+import { z } from 'zod'
 
 const { t } = useI18n()
 const toast = useToast()
@@ -70,6 +72,7 @@ const editor = useEditor({
         class: 'border-2 border-primary-600 dark:border-primary-400',
       },
     }),
+    Link,
     Image.configure({
       HTMLAttributes: {
         class: 'my-2',
@@ -92,6 +95,29 @@ onMounted(() => {
 onBeforeUnmount(() => {
   editor.value?.destroy()
 })
+
+const insertLinkOpen = ref(false)
+const insertLinkFormRef = ref()
+const insertLinkForm = reactive({
+  url: '',
+})
+const insertLinkFormSchema = z.object({
+  url: z.string().url(t('editor.dialog.link.validateErrorMessage')),
+})
+function insertLinkFormValidate() {
+  return insertLinkFormRef.value?.validate()
+}
+function insertLink() {
+  insertLinkFormValidate().then(() => {
+    editor.value?.chain().focus().setLink({ href: insertLinkForm.url }).run()
+    insertLinkForm.url = ''
+    insertLinkOpen.value = false
+  })
+}
+function closeInsertLinkModel() {
+  insertLinkForm.url = ''
+  insertLinkOpen.value = false
+}
 
 const { upload } = useUpload()
 const uploadImageOpen = ref(false)
@@ -327,6 +353,14 @@ const topMenu = computed(() => [
           withHeaderRow: true,
         }).run()
       }
+    },
+  },
+  {
+    icon: 'i-material-symbols-link-rounded',
+    tooltip: t('editor.tooltip.link'),
+    isActive: editor?.value?.isActive('link'),
+    event: () => {
+      insertLinkOpen.value = true
     },
   },
   {
@@ -572,6 +606,34 @@ function saveFile() {
       <li>{{ $t('editor.info.characters') }}: {{ editor?.storage.characterCount.characters() }}</li>
       <li>{{ $t('editor.info.words') }}: {{ editor?.storage.characterCount.words() }}</li>
     </ul>
+    <UModal v-model="insertLinkOpen">
+      <UCard>
+        <template #header>
+          <h1>{{ $t('editor.dialog.link.title') }}</h1>
+        </template>
+        <UForm ref="insertLinkFormRef" :state="insertLinkForm" :schema="insertLinkFormSchema">
+          <UFormGroup name="url">
+            <UInput v-model="insertLinkForm.url" :placeholder="t('editor.dialog.link.placeholder')" @input="insertLinkFormRef?.validate" @blur="insertLinkFormRef?.validate" />
+          </UFormGroup>
+        </UForm>
+        <template #footer>
+          <div class="flex justify-end gap-2">
+            <UButton
+              variant="solid"
+              @click="insertLink"
+            >
+              {{ $t('form.confirm') }}
+            </UButton>
+            <UButton
+              variant="outline"
+              @click="closeInsertLinkModel"
+            >
+              {{ $t('form.cancel') }}
+            </UButton>
+          </div>
+        </template>
+      </UCard>
+    </UModal>
     <UModal v-model="uploadImageOpen">
       <UCard icon="i-ic-round-upload" variant="outline">
         <template #header>
