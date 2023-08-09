@@ -87,6 +87,7 @@ export function useEditor() {
         spellcheck: 'false',
       },
     },
+    autofocus: 'end',
   })
 
   return { editor }
