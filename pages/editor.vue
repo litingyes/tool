@@ -84,7 +84,7 @@ const editor = useEditor({
   ],
   editorProps: {
     attributes: {
-      class: 'prose dark:prose-invert focus:outline-none',
+      class: 'prose dark:prose-invert focus:outline-none max-w-none',
       spellcheck: 'false',
     },
   },
