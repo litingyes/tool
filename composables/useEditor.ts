@@ -67,7 +67,11 @@ export function useEditor() {
           class: 'border-2 border-primary-600 dark:border-primary-400',
         },
       }),
-      Link,
+      Link.configure({
+        HTMLAttributes: {
+          class: 'cursor-pointer transition-colors text-primary-400 hover:text-primary-600 dark:text-primary-600 dark:hover:text-primary-400',
+        },
+      }),
       Image.configure({
         HTMLAttributes: {
           class: 'my-2',
