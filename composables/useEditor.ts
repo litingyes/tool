@@ -15,6 +15,7 @@ import Link from '@tiptap/extension-link'
 import Image from '@tiptap/extension-image'
 import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
+import Placeholder from '@tiptap/extension-placeholder'
 import { isMacOS } from '@tiptap/core'
 import SlashMenu from '~/utils/editor/extension-slash-menu'
 import type { Item as SlashMenuItem } from '~/components/SlashMenu.vue'
@@ -170,6 +171,10 @@ export function useEditor() {
       }),
       CharacterCount,
       Typography,
+      Placeholder.configure({
+        placeholder: 'Input text or "/" for commands',
+        emptyNodeClass: 'before:content-[attr(data-placeholder)] before:pointer-events-none before:float-left before:h-0 before:text-gray-300 dark:before:text-gray-700',
+      }),
       SlashMenu.configure({
         suggestion: {
           items: ({ query }) => {
