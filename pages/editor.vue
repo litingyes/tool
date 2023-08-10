@@ -5,6 +5,7 @@ import { z } from 'zod'
 
 const { t } = useI18n()
 const toast = useToast()
+
 const { editor } = useEditor()
 
 onMounted(() => {

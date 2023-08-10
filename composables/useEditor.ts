@@ -15,8 +15,98 @@ import Link from '@tiptap/extension-link'
 import Image from '@tiptap/extension-image'
 import CharacterCount from '@tiptap/extension-character-count'
 import Typography from '@tiptap/extension-typography'
+import { isMacOS } from '@tiptap/core'
+import SlashMenu from '~/utils/editor/extension-slash-menu'
+import type { Item as SlashMenuItem } from '~/components/SlashMenu.vue'
+
+const Cmd = isMacOS() ? 'Cmd' : 'Control'
+const Option = isMacOS() ? 'Option' : 'Alt'
 
 export function useEditor() {
+  const slashMenu: SlashMenuItem[] = [
+    {
+      label: 'Heading 1',
+      icon: 'i-material-symbols-format-h1-rounded',
+      keys: ['Heading', 'H1'],
+      shortcuts: [Cmd, Option, '1'],
+      command: (editor) => {
+        editor.chain().focus().toggleHeading({ level: 1 }).run()
+      },
+    },
+    {
+      label: 'Heading 2',
+      icon: 'i-material-symbols-format-h2-rounded',
+      keys: ['Heading', 'H2'],
+      shortcuts: [Cmd, Option, '2'],
+      command: (editor) => {
+        editor.chain().focus().toggleHeading({ level: 2 }).run()
+      },
+    },
+    {
+      label: 'Heading 3',
+      icon: 'i-material-symbols-format-h3-rounded',
+      keys: ['Heading', 'H3'],
+      shortcuts: [Cmd, Option, '3'],
+      command: (editor) => {
+        editor.chain().focus().toggleHeading({ level: 3 }).run()
+      },
+    },
+    {
+      label: 'Heading 4',
+      icon: 'i-material-symbols-format-h4-rounded',
+      keys: ['Heading', 'H4'],
+      shortcuts: [Cmd, Option, '4'],
+      command: (editor) => {
+        editor.chain().focus().toggleHeading({ level: 4 }).run()
+      },
+    },
+    {
+      label: 'Heading 5',
+      icon: 'i-material-symbols-format-h5-rounded',
+      keys: ['Heading', 'H5'],
+      shortcuts: [Cmd, Option, '5'],
+      command: (editor) => {
+        editor.chain().focus().toggleHeading({ level: 5 }).run()
+      },
+    },
+    {
+      label: 'Heading 6',
+      icon: 'i-material-symbols-format-h6-rounded',
+      keys: ['Heading', 'H6'],
+      shortcuts: [Cmd, Option, '6'],
+      command: (editor) => {
+        editor.chain().focus().toggleHeading({ level: 6 }).run()
+      },
+    },
+    {
+      label: 'Ordered List',
+      icon: 'i-material-symbols-format-list-numbered-rounded',
+      keys: ['Ordered List', 'OL'],
+      shortcuts: [Cmd, 'Shift', '7'],
+      command: (editor) => {
+        editor.chain().focus().toggleOrderedList().run()
+      },
+    },
+    {
+      label: 'Bullet List',
+      icon: 'i-material-symbols-lists-rounded',
+      shortcuts: [Cmd, 'Shift', '8'],
+      keys: ['Bullet List', 'BL'],
+      command: (editor) => {
+        editor.chain().focus().toggleBulletList().run()
+      },
+    },
+    {
+      label: 'Task List',
+      icon: 'i-lucide-list-todo',
+      shortcuts: [Cmd, 'Shift', '9'],
+      keys: ['Task List', 'TL'],
+      command: (editor) => {
+        editor.chain().focus().toggleTaskList().run()
+      },
+    },
+  ]
+
   const editor = useTiptap({
     content: 'Edit Tool on <a href="https://tool.liting.ink" target="_blank">https://tool.liting.ink</a>',
     extensions: [
@@ -80,6 +170,13 @@ export function useEditor() {
       }),
       CharacterCount,
       Typography,
+      SlashMenu.configure({
+        suggestion: {
+          items: ({ query }) => {
+            return slashMenu.filter(item => item.keys.some(key => key.toLowerCase().startsWith(query.toLowerCase())))
+          },
+        },
+      }),
     ],
     editorProps: {
       attributes: {
