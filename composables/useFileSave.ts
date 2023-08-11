@@ -31,10 +31,18 @@ export function useFileSave() {
     save(`${name}.txt`, blob)
   }
 
+  const saveMarkdown = (name: string, data: string) => {
+    const blob = new Blob([data], {
+      type: 'text/markdown',
+    })
+    save(`${name}.md`, blob)
+  }
+
   return {
     save,
     saveHtml,
     saveJson,
     saveText,
+    saveMarkdown,
   }
 }

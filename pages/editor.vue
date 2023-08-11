@@ -422,12 +422,46 @@ const importMenu = [
       })
     },
   }],
+  [{
+    label: 'Markdown',
+    icon: 'i-tabler-markdown',
+    click: () => {
+      upload({
+        accept: '.md',
+        cb: (data) => {
+          try {
+            editor.value?.commands.setContent(data)
+            toast.add({
+              title: t('editor.import.success'),
+              icon: 'i-mdi-check-circle-outline',
+              color: 'green',
+              timeout: 2000,
+              ui: {
+                title: 'text-green-500',
+              },
+            })
+          }
+          catch (e) {
+            toast.add({
+              title: t('editor.import.failed'),
+              icon: 'i-codicon-error',
+              color: 'red',
+              timeout: 2000,
+              ui: {
+                title: 'text-red-500',
+              },
+            })
+          }
+        },
+      })
+    },
+  }],
 ]
 
 const saveFileModalVisible = ref(false)
 const fileName = ref('')
-const { saveHtml, saveJson, saveText } = useFileSave()
-const saveFileType = ref<'HTML' | 'JSON' | 'TEXT'>()
+const { saveHtml, saveJson, saveText, saveMarkdown } = useFileSave()
+const saveFileType = ref<'HTML' | 'JSON' | 'TEXT' | 'MARKWODN'>()
 const outputMenu = [
   [{
     label: 'HTML',
@@ -456,6 +490,15 @@ const outputMenu = [
       saveFileModalVisible.value = true
     },
   }],
+  [{
+    label: 'Markdown',
+    icon: 'i-tabler-markdown',
+    click: () => {
+      fileName.value = ''
+      saveFileType.value = 'MARKWODN'
+      saveFileModalVisible.value = true
+    },
+  }],
 ]
 function saveFile() {
   try {
@@ -463,8 +506,10 @@ function saveFile() {
       saveHtml(fileName.value, editor.value?.getHTML() ?? '')
     else if (saveFileType.value === 'JSON')
       saveJson(fileName.value, JSON.stringify(editor.value?.getJSON(), null, 2))
-    else
+    else if (saveFileType.value === 'TEXT')
       saveText(fileName.value, editor.value?.getText() ?? '')
+    else
+      saveMarkdown(fileName.value, editor.value?.storage?.markdown?.getMarkdown())
 
     toast.add({
       title: t('editor.output.success'),
@@ -508,13 +553,13 @@ function saveFile() {
       <ul class="flex gap-2">
         <li>
           <UDropdown
-            :items="importMenu" mode="hover" :ui="{ width: 'w-24' }"
+            :items="importMenu" mode="hover" :ui="{ width: 'w-32' }"
           >
             <UButton size="xs" variant="outline" :label="$t('editor.import.label')" />
           </UDropdown>
         </li>
         <li>
-          <UDropdown :items="outputMenu" mode="hover" :popper="{ placement: 'bottom-start' }" :ui="{ width: 'w-24' }">
+          <UDropdown :items="outputMenu" mode="hover" :ui="{ width: 'w-32' }">
             <UButton size="xs" variant="outline" :label="$t('editor.output.label')" />
           </UDropdown>
         </li>
