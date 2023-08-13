@@ -150,8 +150,9 @@ export function useEditor() {
       TableContainer,
       Table.configure({
         resizable: true,
-        handleWidth: 10,
+        handleWidth: 4,
         cellMinWidth: 64,
+        allowTableNodeSelection: true,
       }),
       TableRow,
       TableHeader.configure({
