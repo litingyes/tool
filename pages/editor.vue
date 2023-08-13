@@ -265,7 +265,7 @@ const topMenu = computed(() => [
     icon: 'i-majesticons-table-line',
     isActive: editor?.value?.isActive('table'),
     event: () => {
-      if (!editor?.value?.isActive('table')) {
+      if (!editor?.value?.isActive('tableContainer')) {
         editor.value?.chain().focus().insertTable({
           rows: 3,
           cols: 5,

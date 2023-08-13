@@ -128,6 +128,9 @@ devDependencies:
   lint-staged:
     specifier: ^13.2.3
     version: 13.2.3
+  markdown-it:
+    specifier: ^13.0.1
+    version: 13.0.1
   nuxt:
     specifier: ^3.6.5
     version: 3.6.5(@types/node@18.17.1)(eslint@8.46.0)(sass@1.64.2)(stylelint@15.10.2)(typescript@5.1.6)

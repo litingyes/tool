@@ -7,7 +7,7 @@ import Superscript from '@tiptap/extension-superscript'
 import Subscript from '@tiptap/extension-subscript'
 import Highlight from '@tiptap/extension-highlight'
 import TextAlign from '@tiptap/extension-text-align'
-import Table from '@tiptap/extension-table'
+
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
@@ -18,6 +18,9 @@ import Typography from '@tiptap/extension-typography'
 import Placeholder from '@tiptap/extension-placeholder'
 import { Markdown } from 'tiptap-markdown'
 import { isMacOS } from '@tiptap/core'
+
+import Table from '~/utils/editor/extension-extend-table'
+import TableContainer from '~/utils/editor/extension-table-container'
 import SlashMenu from '~/utils/editor/extension-slash-menu'
 import type { Item as SlashMenuItem } from '~/components/SlashMenu.vue'
 
@@ -145,8 +148,11 @@ export function useEditor() {
       TextAlign.configure({
         types: ['heading', 'tableHeader', 'tableCell'],
       }),
+      TableContainer,
       Table.configure({
         resizable: true,
+        handleWidth: 10,
+        cellMinWidth: 64,
       }),
       TableRow,
       TableHeader.configure({
