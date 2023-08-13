@@ -18,11 +18,10 @@ import Typography from '@tiptap/extension-typography'
 import Placeholder from '@tiptap/extension-placeholder'
 import { Markdown } from 'tiptap-markdown'
 import { isMacOS } from '@tiptap/core'
-
+import type { Item as SlashMenuItem } from '~/components/editor/SlashMenu.vue'
 import Table from '~/utils/editor/extension-extend-table'
 import TableContainer from '~/utils/editor/extension-table-container'
 import SlashMenu from '~/utils/editor/extension-slash-menu'
-import type { Item as SlashMenuItem } from '~/components/SlashMenu.vue'
 
 const Cmd = isMacOS() ? 'Cmd' : 'Control'
 const Option = isMacOS() ? 'Option' : 'Alt'

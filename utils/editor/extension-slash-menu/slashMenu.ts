@@ -5,8 +5,8 @@ import Suggestion from '@tiptap/suggestion'
 import { VueRenderer } from '@tiptap/vue-3'
 import type { Instance } from 'tippy.js'
 import tippy from 'tippy.js'
-import SlashMenuVue from '~/components/SlashMenu.vue'
-import type { Item as SlashMenuItem } from '~/components/SlashMenu.vue'
+import type { Item as SlashMenuItem } from '~/components/editor/SlashMenu.vue'
+import SlashMenuVue from '~/components/editor/SlashMenu.vue'
 
 export interface SlashMenuOptions {
   HTMLAttributes: Record<string, any>
