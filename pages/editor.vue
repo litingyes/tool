@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { EditorContent } from '@tiptap/vue-3'
+import type { Node } from '@tiptap/core'
 import { isMacOS } from '@tiptap/core'
 import { z } from 'zod'
 
@@ -271,6 +272,11 @@ const topMenu = computed(() => [
           cols: 5,
           withHeaderRow: true,
         }).run()
+        // @ts-expect-error type incorrect
+        const { content, size } = editor.value?.state.doc.content
+        // @ts-expect-error type incorrect
+        if ((content as Node[])[content.length - 1].type.name === 'tableContainer')
+          editor.value?.chain().insertContentAt(size, { type: 'paragraph' }).setNodeSelection(size - 2 - 3 * 5 * 4).run()
       }
     },
   },
