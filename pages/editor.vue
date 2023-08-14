@@ -3,6 +3,7 @@ import { EditorContent } from '@tiptap/vue-3'
 import type { Node } from '@tiptap/core'
 import { isMacOS } from '@tiptap/core'
 import { z } from 'zod'
+import { consola } from 'consola'
 
 const { t } = useI18n()
 const toast = useToast()
@@ -414,6 +415,7 @@ const importMenu = [
             })
           }
           catch (e) {
+            consola.error(e)
             toast.add({
               title: t('editor.import.failed'),
               icon: 'i-codicon-error',
@@ -448,6 +450,7 @@ const importMenu = [
             })
           }
           catch (e) {
+            consola.error(e)
             toast.add({
               title: t('editor.import.failed'),
               icon: 'i-codicon-error',
@@ -530,6 +533,7 @@ function saveFile() {
     saveFileModalVisible.value = false
   }
   catch (e) {
+    consola.error(e)
     toast.add({
       title: t('editor.output.failed'),
       icon: 'i-codicon-error',
