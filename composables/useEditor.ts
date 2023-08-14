@@ -112,7 +112,6 @@ export function useEditor() {
   ]
 
   const editor = useTiptap({
-    content: 'Edit Tool on <a href="https://tool.liting.ink" target="_blank">https://tool.liting.ink</a>',
     extensions: [
       StarterKit.configure({
         code: {
