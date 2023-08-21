@@ -60,8 +60,8 @@ devDependencies:
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/core@2.0.4)(@tiptap/pm@2.0.4)
   '@tiptap/extension-subscript':
-    specifier: ^2.0.4
-    version: 2.0.4(@tiptap/core@2.0.4)
+    specifier: ^2.1.6
+    version: 2.1.6(@tiptap/core@2.0.4)
   '@tiptap/extension-superscript':
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/core@2.0.4)
@@ -1468,8 +1468,8 @@ packages:
     engines: {node: '>= 16'}
     dev: true
 
-  /@intlify/shared@9.3.0-beta.25:
-    resolution: {integrity: sha512-Zg+ECV9RPdp227tCJOgvPb+S3i651nf4kKHsMojSyWCppVK/4NFuDrBG2lIQSQL6Iq5LKVr5MkezHCW2NBTQRg==}
+  /@intlify/shared@9.3.0-beta.26:
+    resolution: {integrity: sha512-RpCtfSYIg4tSskrazTr5+WCHyw6qpgwdIxC+x3nCnrPGxyk+en9FoSbadVfx/w7uDTdyhKslEw4d2+qhNc0s4Q==}
     engines: {node: '>= 16'}
     dev: true
 
@@ -2824,8 +2824,8 @@ packages:
       '@tiptap/core': 2.0.4(@tiptap/pm@2.0.4)
     dev: true
 
-  /@tiptap/extension-subscript@2.0.4(@tiptap/core@2.0.4):
-    resolution: {integrity: sha512-5Z4Wemz/krWE/LNwxIZuRCcvgxpF7FRvG+2KFCoaMZrV7tYTDAOxQyD7HdA/Lab5M1YXaJUd2UWVwSUBONhHDA==}
+  /@tiptap/extension-subscript@2.1.6(@tiptap/core@2.0.4):
+    resolution: {integrity: sha512-B4VIhQsrtx3aQbexVMKeW2RqWm3UGuvJ/L2rm4gonIGuwlVzE3jrYZ+YHBNu2wY5XR/7veC4bKS1Nhe56Na0AQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
@@ -12178,7 +12178,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.25
+      '@intlify/shared': 9.3.0-beta.26
       '@intlify/vue-i18n-bridge': 0.8.0(vue-i18n@9.3.0-beta.24)
       '@intlify/vue-router-bridge': 0.8.0(vue@3.3.4)
       ufo: 1.1.2
