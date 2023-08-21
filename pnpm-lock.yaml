@@ -162,8 +162,8 @@ devDependencies:
     specifier: ^5.1.6
     version: 5.1.6
   zod:
-    specifier: ^3.22.0
-    version: 3.22.0
+    specifier: ^3.22.2
+    version: 3.22.2
 
 packages:
 
@@ -1468,8 +1468,8 @@ packages:
     engines: {node: '>= 16'}
     dev: true
 
-  /@intlify/shared@9.3.0-beta.25:
-    resolution: {integrity: sha512-Zg+ECV9RPdp227tCJOgvPb+S3i651nf4kKHsMojSyWCppVK/4NFuDrBG2lIQSQL6Iq5LKVr5MkezHCW2NBTQRg==}
+  /@intlify/shared@9.3.0-beta.26:
+    resolution: {integrity: sha512-RpCtfSYIg4tSskrazTr5+WCHyw6qpgwdIxC+x3nCnrPGxyk+en9FoSbadVfx/w7uDTdyhKslEw4d2+qhNc0s4Q==}
     engines: {node: '>= 16'}
     dev: true
 
@@ -12178,7 +12178,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.25
+      '@intlify/shared': 9.3.0-beta.26
       '@intlify/vue-i18n-bridge': 0.8.0(vue-i18n@9.3.0-beta.24)
       '@intlify/vue-router-bridge': 0.8.0(vue@3.3.4)
       ufo: 1.1.2
@@ -12536,6 +12536,6 @@ packages:
       readable-stream: 3.6.2
     dev: true
 
-  /zod@3.22.0:
-    resolution: {integrity: sha512-y5KZY/ssf5n7hCGDGGtcJO/EBJEm5Pa+QQvFBeyMOtnFYOSflalxIFFvdaYevPhePcmcKC4aTbFkCcXN7D0O8Q==}
+  /zod@3.22.2:
+    resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
     dev: true
