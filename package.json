@@ -47,7 +47,7 @@
     "@tiptap/extension-text-align": "^2.0.4",
     "@tiptap/extension-typography": "^2.1.8",
     "@tiptap/extension-underline": "^2.0.4",
-    "@tiptap/pm": "^2.0.4",
+    "@tiptap/pm": "^2.1.8",
     "@tiptap/starter-kit": "^2.0.4",
     "@tiptap/suggestion": "^2.1.7",
     "@tiptap/vue-3": "^2.1.8",
