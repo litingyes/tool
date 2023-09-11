@@ -57,8 +57,8 @@ devDependencies:
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/core@2.0.4)(@tiptap/pm@2.1.8)
   '@tiptap/extension-placeholder':
-    specifier: ^2.0.4
-    version: 2.0.4(@tiptap/core@2.0.4)(@tiptap/pm@2.1.8)
+    specifier: ^2.1.8
+    version: 2.1.8(@tiptap/core@2.0.4)(@tiptap/pm@2.1.8)
   '@tiptap/extension-subscript':
     specifier: ^2.1.6
     version: 2.1.6(@tiptap/core@2.0.4)
@@ -3367,8 +3367,8 @@ packages:
       '@tiptap/core': 2.0.4(@tiptap/pm@2.1.8)
     dev: true
 
-  /@tiptap/extension-placeholder@2.0.4(@tiptap/core@2.0.4)(@tiptap/pm@2.1.8):
-    resolution: {integrity: sha512-Y8hjUYBGTbytgrsplSZdHGciqbuVHQX+h0JcuvVaIlAy1kR7hmbxJLqL8tNa7qLtTqo2MfS2942OtSv85JOCzA==}
+  /@tiptap/extension-placeholder@2.1.8(@tiptap/core@2.0.4)(@tiptap/pm@2.1.8):
+    resolution: {integrity: sha512-4yhyvvqsXTzXtJs+39cgvsld4df3ppbajCoxkzHYntKoonm3DtgFTSh+lbdEVCQgDmIfIt1o6DKY1n8NAJRQUQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
