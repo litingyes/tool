@@ -75,8 +75,8 @@ devDependencies:
     specifier: ^2.1.8
     version: 2.1.8(@tiptap/core@2.0.4)
   '@tiptap/extension-table-row':
-    specifier: ^2.1.7
-    version: 2.1.7(@tiptap/core@2.0.4)
+    specifier: ^2.1.8
+    version: 2.1.8(@tiptap/core@2.0.4)
   '@tiptap/extension-task-item':
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/core@2.0.4)(@tiptap/pm@2.1.8)
@@ -1776,6 +1776,11 @@ packages:
     engines: {node: '>= 16'}
     dev: true
 
+  /@intlify/shared@9.4.0:
+    resolution: {integrity: sha512-AFqymip2kToqA0B6KZPg5jSrdcVHoli9t/VhGKE2iiMq9utFuMoGdDC/JOCIZgwxo6aXAk86QyU2XtzEoMuZ6A==}
+    engines: {node: '>= 16'}
+    dev: true
+
   /@intlify/unplugin-vue-i18n@0.13.0(vue-i18n@9.3.0-beta.27):
     resolution: {integrity: sha512-Mm9NhcvbsSZ5FXXnCpL/XFCk1hPp809hxErNmnwqGp21JjYOKGp3wpQSrpvGk33ZrHZbhPqAu70IEVEAxVZ5+A==}
     engines: {node: '>= 14.16'}
@@ -3412,8 +3417,8 @@ packages:
       '@tiptap/core': 2.0.4(@tiptap/pm@2.1.8)
     dev: true
 
-  /@tiptap/extension-table-row@2.1.7(@tiptap/core@2.0.4):
-    resolution: {integrity: sha512-DBCaEMEuCCoOmr4fdDfp2jnmyWPt672rmCZ5WUuenJ47Cy4Ox2dV+qk5vBZ/yDQcq12WvzLMhdSnAo9pMMMa6Q==}
+  /@tiptap/extension-table-row@2.1.8(@tiptap/core@2.0.4):
+    resolution: {integrity: sha512-rjMCZjaemC3x4T3fUExi8J8ffo1I29u9e8rSHRIna2ObTRq4PeI48uVTET5EREBD5/CbfX6zHFgkZfUZeR0g+A==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
@@ -12854,7 +12859,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.27
+      '@intlify/shared': 9.4.0
       '@intlify/vue-i18n-bridge': 0.8.0(vue-i18n@9.3.0-beta.27)
       '@intlify/vue-router-bridge': 0.8.0(vue@3.3.4)
       ufo: 1.3.0
