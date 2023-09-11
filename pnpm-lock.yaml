@@ -40,7 +40,7 @@ devDependencies:
     version: 8.0.0-rc.4(vue@3.3.4)
   '@nuxtjs/stylelint-module':
     specifier: ^5.1.0
-    version: 5.1.0(postcss@8.4.28)(stylelint@15.10.3)(vite@4.4.9)(webpack@5.85.0)
+    version: 5.1.0(postcss@8.4.29)(stylelint@15.10.3)(vite@4.4.9)(webpack@5.85.0)
   '@tiptap/extension-character-count':
     specifier: ^2.1.8
     version: 2.1.8(@tiptap/core@2.0.4)(@tiptap/pm@2.1.8)
@@ -60,8 +60,8 @@ devDependencies:
     specifier: ^2.1.8
     version: 2.1.8(@tiptap/core@2.0.4)(@tiptap/pm@2.1.8)
   '@tiptap/extension-subscript':
-    specifier: ^2.1.6
-    version: 2.1.6(@tiptap/core@2.0.4)
+    specifier: ^2.1.8
+    version: 2.1.8(@tiptap/core@2.0.4)
   '@tiptap/extension-superscript':
     specifier: ^2.0.4
     version: 2.0.4(@tiptap/core@2.0.4)
@@ -148,7 +148,7 @@ devDependencies:
     version: 15.10.3
   stylelint-config-recommended-scss:
     specifier: ^12.0.0
-    version: 12.0.0(postcss@8.4.28)(stylelint@15.10.3)
+    version: 12.0.0(postcss@8.4.29)(stylelint@15.10.3)
   stylelint-config-recommended-vue:
     specifier: ^1.5.0
     version: 1.5.0(postcss-html@1.5.0)(stylelint@15.10.3)
@@ -2637,7 +2637,7 @@ packages:
       - vue-router
     dev: true
 
-  /@nuxtjs/stylelint-module@5.1.0(postcss@8.4.28)(stylelint@15.10.3)(vite@4.4.9)(webpack@5.85.0):
+  /@nuxtjs/stylelint-module@5.1.0(postcss@8.4.29)(stylelint@15.10.3)(vite@4.4.9)(webpack@5.85.0):
     resolution: {integrity: sha512-zpWn5nJfFstBh7PUBjsBNu6rFCN2wtz3JyLGuEqCh4yo7orKclDM3S931E3kMD6Tszpvobhq1CMsgbcZL6K3aA==}
     peerDependencies:
       stylelint: '>=13'
@@ -2647,7 +2647,7 @@ packages:
       pathe: 1.1.1
       stylelint: 15.10.3
       stylelint-webpack-plugin: 4.1.1(stylelint@15.10.3)(webpack@5.85.0)
-      vite-plugin-stylelint: 4.3.0(postcss@8.4.28)(stylelint@15.10.3)(vite@4.4.9)
+      vite-plugin-stylelint: 4.3.0(postcss@8.4.29)(stylelint@15.10.3)(vite@4.4.9)
     transitivePeerDependencies:
       - '@types/stylelint'
       - postcss
@@ -3342,8 +3342,8 @@ packages:
       '@tiptap/core': 2.0.4(@tiptap/pm@2.1.8)
     dev: true
 
-  /@tiptap/extension-subscript@2.1.6(@tiptap/core@2.0.4):
-    resolution: {integrity: sha512-B4VIhQsrtx3aQbexVMKeW2RqWm3UGuvJ/L2rm4gonIGuwlVzE3jrYZ+YHBNu2wY5XR/7veC4bKS1Nhe56Na0AQ==}
+  /@tiptap/extension-subscript@2.1.8(@tiptap/core@2.0.4):
+    resolution: {integrity: sha512-vWtm/NaXTnWnfekXlUP5wi9hrMqMmIxz3InhlqCdcwFwM2Luquen+Di6i6qnbtj4nzxJXgCi8MIUwIT+D5MtLA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
@@ -10073,8 +10073,8 @@ packages:
     dependencies:
       htmlparser2: 8.0.2
       js-tokens: 8.0.1
-      postcss: 8.4.28
-      postcss-safe-parser: 6.0.0(postcss@8.4.28)
+      postcss: 8.4.29
+      postcss-safe-parser: 6.0.0(postcss@8.4.29)
     dev: true
 
   /postcss-import-resolver@2.0.0:
@@ -10432,13 +10432,22 @@ packages:
       postcss: 8.4.28
     dev: true
 
-  /postcss-scss@4.0.6(postcss@8.4.28):
+  /postcss-safe-parser@6.0.0(postcss@8.4.29):
+    resolution: {integrity: sha512-FARHN8pwH+WiS2OPCxJI8FuRJpTVnn6ZNFiqAM2aeW2LwTHWWmWgIyKC6cUo0L8aeKiF/14MNvnpls6R2PBeMQ==}
+    engines: {node: '>=12.0'}
+    peerDependencies:
+      postcss: ^8.3.3
+    dependencies:
+      postcss: 8.4.29
+    dev: true
+
+  /postcss-scss@4.0.6(postcss@8.4.29):
     resolution: {integrity: sha512-rLDPhJY4z/i4nVFZ27j9GqLxj1pwxE80eAzUNRMXtcpipFYIeowerzBgG3yJhMtObGEXidtIgbUpQ3eLDsf5OQ==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.4.19
     dependencies:
-      postcss: 8.4.28
+      postcss: 8.4.29
     dev: true
 
   /postcss-selector-parser@6.0.10:
@@ -11642,7 +11651,7 @@ packages:
       stylelint: 15.10.3
     dev: true
 
-  /stylelint-config-recommended-scss@12.0.0(postcss@8.4.28)(stylelint@15.10.3):
+  /stylelint-config-recommended-scss@12.0.0(postcss@8.4.29)(stylelint@15.10.3):
     resolution: {integrity: sha512-5Bb2mlGy6WLa30oNeKpZvavv2lowJUsUJO25+OA68GFTemlwd1zbFsL7q0bReKipOSU3sG47hKneZ6Nd+ctrFA==}
     peerDependencies:
       postcss: ^8.3.3
@@ -11651,8 +11660,8 @@ packages:
       postcss:
         optional: true
     dependencies:
-      postcss: 8.4.28
-      postcss-scss: 4.0.6(postcss@8.4.28)
+      postcss: 8.4.29
+      postcss-scss: 4.0.6(postcss@8.4.29)
       stylelint: 15.10.3
       stylelint-config-recommended: 12.0.0(stylelint@15.10.3)
       stylelint-scss: 5.0.0(stylelint@15.10.3)
@@ -12691,7 +12700,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-stylelint@4.3.0(postcss@8.4.28)(stylelint@15.10.3)(vite@4.4.9):
+  /vite-plugin-stylelint@4.3.0(postcss@8.4.29)(stylelint@15.10.3)(vite@4.4.9):
     resolution: {integrity: sha512-S8BONq5X8TndOFt+My4lkeHxVZvkDQRL++TV0nvnuYgOU/CvDddPPOT4V6go+ETzWK0NEtXqCGFnpkmm8c8Xcg==}
     engines: {node: '>=14.18'}
     peerDependencies:
@@ -12710,7 +12719,7 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.0.4(rollup@3.28.1)
       chokidar: 3.5.3
-      postcss: 8.4.28
+      postcss: 8.4.29
       stylelint: 15.10.3
       vite: 4.4.9(@types/node@18.17.5)(sass@1.66.1)
     dev: true
