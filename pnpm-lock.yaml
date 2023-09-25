@@ -45,8 +45,8 @@ devDependencies:
     specifier: ^2.1.8
     version: 2.1.8(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
   '@tiptap/extension-floating-menu':
-    specifier: ^2.1.10
-    version: 2.1.10(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
+    specifier: ^2.1.11
+    version: 2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
   '@tiptap/extension-highlight':
     specifier: ^2.1.8
     version: 2.1.8(@tiptap/core@2.1.10)
@@ -3243,8 +3243,8 @@ packages:
       '@tiptap/pm': 2.1.8
     dev: true
 
-  /@tiptap/extension-floating-menu@2.1.10(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8):
-    resolution: {integrity: sha512-uChrDrY3usnF9wSegqq+YGaqd229p9gmaB5xyOyMERDs972hKj4Ul95rXzBBiMKAWUMw9eM09i7+ijTzz4KDUw==}
+  /@tiptap/extension-floating-menu@2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8):
+    resolution: {integrity: sha512-ExeoOQ6nT0CY0eWx6WjbG+osurXLXa7XrqIdhCAcTmzBAlGiKt8khX9qaZ+QF+BRK1r1lja2KX+5/fpLK7Dt1g==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -3545,7 +3545,7 @@ packages:
     dependencies:
       '@tiptap/core': 2.1.10(@tiptap/pm@2.1.8)
       '@tiptap/extension-bubble-menu': 2.1.8(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
-      '@tiptap/extension-floating-menu': 2.1.10(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
+      '@tiptap/extension-floating-menu': 2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
       '@tiptap/pm': 2.1.8
       vue: 3.3.4
     dev: true
