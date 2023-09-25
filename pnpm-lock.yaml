@@ -102,8 +102,8 @@ devDependencies:
     specifier: ^2.1.8
     version: 2.1.8(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
   '@tiptap/vue-3':
-    specifier: ^2.1.8
-    version: 2.1.8(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)(vue@3.3.4)
+    specifier: ^2.1.11
+    version: 2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)(vue@3.3.4)
   '@types/node':
     specifier: ^18
     version: 18.17.17
@@ -3178,8 +3178,8 @@ packages:
       '@tiptap/core': 2.1.10(@tiptap/pm@2.1.8)
     dev: true
 
-  /@tiptap/extension-bubble-menu@2.1.8(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8):
-    resolution: {integrity: sha512-Na9Maz20jS+3UrHtAGLkfFt3uu+HD9SSK3+3WyNeylkWciJa/qkZKqwhptHrjpin0IHSF2JNche+ZA+hSmnm2Q==}
+  /@tiptap/extension-bubble-menu@2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8):
+    resolution: {integrity: sha512-WFJJpZvl9DP94Y5RQZB/THDxvDbrTo8tuhjT7yWlhseJ6zyhWmRXdutt39wfSZNFxitv/As+s7cO9aYLML/TVg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -3536,15 +3536,15 @@ packages:
       '@tiptap/pm': 2.1.8
     dev: true
 
-  /@tiptap/vue-3@2.1.8(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)(vue@3.3.4):
-    resolution: {integrity: sha512-+cIbxRoWWHRbVL+/lzCHb6uG3ow+w06JVC+YJ5GP9vUjtdJ101hLM8L308TCmHgiIWzGdDtwXq3Tf1CwAYRiWQ==}
+  /@tiptap/vue-3@2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)(vue@3.3.4):
+    resolution: {integrity: sha512-PA0ep7W4cXh1jSXpXgR/eKjTbBxP8b0rIKmwLHOLVLaXz2fGFYt+HwKmtZSnYMTcf+CscXmbhmajBJZQJVJQwQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
       vue: ^3.0.0
     dependencies:
       '@tiptap/core': 2.1.10(@tiptap/pm@2.1.8)
-      '@tiptap/extension-bubble-menu': 2.1.8(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
+      '@tiptap/extension-bubble-menu': 2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
       '@tiptap/extension-floating-menu': 2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.8)
       '@tiptap/pm': 2.1.8
       vue: 3.3.4
