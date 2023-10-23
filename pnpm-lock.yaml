@@ -48,8 +48,8 @@ devDependencies:
     specifier: ^2.1.11
     version: 2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.11)
   '@tiptap/extension-highlight':
-    specifier: ^2.1.8
-    version: 2.1.8(@tiptap/core@2.1.10)
+    specifier: ^2.1.12
+    version: 2.1.12(@tiptap/core@2.1.10)
   '@tiptap/extension-image':
     specifier: ^2.1.11
     version: 2.1.11(@tiptap/core@2.1.10)
@@ -3067,8 +3067,8 @@ packages:
       '@tiptap/core': 2.1.10(@tiptap/pm@2.1.11)
     dev: true
 
-  /@tiptap/extension-highlight@2.1.8(@tiptap/core@2.1.10):
-    resolution: {integrity: sha512-OCXtFWCbwsgOHq7IP4Qr02EfjwYeRRcuL1ipv0LojGtMcvnkw7OLhQZ8oocrqi4/6QCOtPLSGlcqrQ6pmN7jww==}
+  /@tiptap/extension-highlight@2.1.12(@tiptap/core@2.1.10):
+    resolution: {integrity: sha512-buen31cYPyiiHA2i0o2i/UcjRTg/42mNDCizGr1OJwvv3AELG3qOFc4Y58WJWIvWNv+1Dr4ZxHA3GNVn0ANWyg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
