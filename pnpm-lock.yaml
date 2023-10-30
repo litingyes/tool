@@ -60,8 +60,8 @@ devDependencies:
     specifier: ^2.1.11
     version: 2.1.11(@tiptap/core@2.1.10)(@tiptap/pm@2.1.12)
   '@tiptap/extension-subscript':
-    specifier: ^2.1.11
-    version: 2.1.11(@tiptap/core@2.1.10)
+    specifier: ^2.1.12
+    version: 2.1.12(@tiptap/core@2.1.10)
   '@tiptap/extension-superscript':
     specifier: ^2.1.11
     version: 2.1.11(@tiptap/core@2.1.10)
@@ -789,7 +789,7 @@ packages:
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1(@types/node@18.18.4)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@20.5.1)(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
       - '@swc/core'
@@ -812,7 +812,7 @@ packages:
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1(@types/node@20.5.1)(typescript@5.2.2)
+      ts-node: 10.9.1(@types/node@18.18.4)(typescript@5.2.2)
       typescript: 5.2.2
     transitivePeerDependencies:
       - '@swc/core'
@@ -3289,8 +3289,8 @@ packages:
       '@tiptap/core': 2.1.10(@tiptap/pm@2.1.12)
     dev: true
 
-  /@tiptap/extension-subscript@2.1.11(@tiptap/core@2.1.10):
-    resolution: {integrity: sha512-KXPrcN2i9edOyjsYc+WmXtRNod5rcA402NJEXKsSg/Lr7ezstdeE9CqVVpipdKDRBv5avJcSdCe3TiDLnFggBw==}
+  /@tiptap/extension-subscript@2.1.12(@tiptap/core@2.1.10):
+    resolution: {integrity: sha512-tb1jysEvf4SIiXwEOgDTXiyrG39RVNHvn/zsGMg5wy5t9qUp9m1k7kKYTH084ktuKDAPQonCcpn3hwc+ngTFzg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
@@ -5581,7 +5581,7 @@ packages:
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 17.8.0
+      '@commitlint/load': 17.8.1
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
