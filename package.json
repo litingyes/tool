@@ -61,7 +61,7 @@
     "lint-staged": "^13.3.0",
     "markdown-it": "^13.0.2",
     "nuxt": "^3.7.4",
-    "nuxt-lodash": "^2.5.0",
+    "nuxt-lodash": "^2.5.3",
     "sass": "^1.69.3",
     "simple-git-hooks": "^2.9.0",
     "stylelint": "^15.11.0",
