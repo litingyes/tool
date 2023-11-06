@@ -156,8 +156,8 @@ devDependencies:
     specifier: ^6.3.7
     version: 6.3.7
   tiptap-markdown:
-    specifier: ^0.8.2
-    version: 0.8.2(@tiptap/core@2.1.10)
+    specifier: ^0.8.4
+    version: 0.8.4(@tiptap/core@2.1.10)
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -11668,8 +11668,8 @@ packages:
       '@popperjs/core': 2.11.8
     dev: true
 
-  /tiptap-markdown@0.8.2(@tiptap/core@2.1.10):
-    resolution: {integrity: sha512-RyfpnH475+FYVh1fCiWF9+wBvA8T6X3PqxZR1MApEewxkoQ5kREQFiVwjZiez9qUQk/Bxu3RerFSJot65V6cbQ==}
+  /tiptap-markdown@0.8.4(@tiptap/core@2.1.10):
+    resolution: {integrity: sha512-aCwr8cpVdZeb/2J0ffz8PvpLmQBcFE9GOxk2vB0Y9zlJEGWnSiGo1BWnwaeiyAdQqfBzV7NyNg+oz2A/MbC/Sg==}
     peerDependencies:
       '@tiptap/core': ^2.0.3
     dependencies:
