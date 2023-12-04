@@ -60,8 +60,8 @@ devDependencies:
     specifier: ^2.1.12
     version: 2.1.12(@tiptap/core@2.1.12)(@tiptap/pm@2.1.12)
   '@tiptap/extension-subscript':
-    specifier: ^2.1.12
-    version: 2.1.12(@tiptap/core@2.1.12)
+    specifier: ^2.1.13
+    version: 2.1.13(@tiptap/core@2.1.12)
   '@tiptap/extension-superscript':
     specifier: ^2.1.12
     version: 2.1.12(@tiptap/core@2.1.12)
@@ -3479,8 +3479,8 @@ packages:
       '@tiptap/core': 2.1.12(@tiptap/pm@2.1.12)
     dev: true
 
-  /@tiptap/extension-subscript@2.1.12(@tiptap/core@2.1.12):
-    resolution: {integrity: sha512-tb1jysEvf4SIiXwEOgDTXiyrG39RVNHvn/zsGMg5wy5t9qUp9m1k7kKYTH084ktuKDAPQonCcpn3hwc+ngTFzg==}
+  /@tiptap/extension-subscript@2.1.13(@tiptap/core@2.1.12):
+    resolution: {integrity: sha512-+kqK0P669Dsl/7IPSQNM/bN35Er45MKtHn8eQmudcLpFmBTsL6DlxG/080/Lqr49a6OLcefQfLaENz+QQVfBag==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
