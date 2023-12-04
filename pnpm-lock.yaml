@@ -90,8 +90,8 @@ devDependencies:
     specifier: ^2.1.13
     version: 2.1.13(@tiptap/core@2.1.13)
   '@tiptap/extension-underline':
-    specifier: ^2.1.12
-    version: 2.1.12(@tiptap/core@2.1.13)
+    specifier: ^2.1.13
+    version: 2.1.13(@tiptap/core@2.1.13)
   '@tiptap/pm':
     specifier: ^2.1.12
     version: 2.1.12
@@ -3514,8 +3514,8 @@ packages:
       '@tiptap/core': 2.1.13(@tiptap/pm@2.1.12)
     dev: true
 
-  /@tiptap/extension-underline@2.1.12(@tiptap/core@2.1.13):
-    resolution: {integrity: sha512-NwwdhFT8gDD0VUNLQx85yFBhP9a8qg8GPuxlGzAP/lPTV8Ubh3vSeQ5N9k2ZF/vHlEvnugzeVCbmYn7wf8vn1g==}
+  /@tiptap/extension-underline@2.1.13(@tiptap/core@2.1.13):
+    resolution: {integrity: sha512-z0CNKPjcvU8TrUSTui1voM7owssyXE9WvEGhIZMHzWwlx2ZXY2/L5+Hh33X/LzSKB9OGf/g1HAuHxrPcYxFuAQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
