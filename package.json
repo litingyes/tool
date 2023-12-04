@@ -28,7 +28,7 @@
     "@nuxthq/ui": "^2.7.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/fontaine": "^0.4.1",
-    "@nuxtjs/i18n": "8.0.0-rc.5",
+    "@nuxtjs/i18n": "8.0.0-rc.7",
     "@nuxtjs/stylelint-module": "^5.1.0",
     "@tiptap/extension-character-count": "^2.1.12",
     "@tiptap/extension-floating-menu": "^2.1.12",
