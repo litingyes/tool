@@ -99,8 +99,8 @@ devDependencies:
     specifier: ^2.1.15
     version: 2.1.15(@tiptap/pm@2.1.15)
   '@tiptap/suggestion':
-    specifier: ^2.1.13
-    version: 2.1.13(@tiptap/core@2.1.15)(@tiptap/pm@2.1.15)
+    specifier: ^2.1.15
+    version: 2.1.15(@tiptap/core@2.1.15)(@tiptap/pm@2.1.15)
   '@tiptap/vue-3':
     specifier: ^2.1.15
     version: 2.1.15(@tiptap/core@2.1.15)(@tiptap/pm@2.1.15)(vue@3.3.13)
@@ -3761,8 +3761,8 @@ packages:
       - '@tiptap/pm'
     dev: true
 
-  /@tiptap/suggestion@2.1.13(@tiptap/core@2.1.15)(@tiptap/pm@2.1.15):
-    resolution: {integrity: sha512-Y05TsiXTFAJ5SrfoV+21MAxig5UNbY0AVa03lQlh/yicTRPpIc6hgZzblB0uxDSYoj6+kaHE4MIZvPvhUD8BJQ==}
+  /@tiptap/suggestion@2.1.15(@tiptap/core@2.1.15)(@tiptap/pm@2.1.15):
+    resolution: {integrity: sha512-m2Hv4nOBKd1LTDCZFxRz8v9KSW+WmA0Z1XZTRRu4M8YkDlgTuzLuOTHwITa+zpUAHzuESgEATK+Pl2NyOqUv6g==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
