@@ -87,8 +87,8 @@ devDependencies:
     specifier: ^2.1.15
     version: 2.1.15(@tiptap/core@2.1.15)
   '@tiptap/extension-typography':
-    specifier: ^2.1.15
-    version: 2.1.15(@tiptap/core@2.1.15)
+    specifier: ^2.1.16
+    version: 2.1.16(@tiptap/core@2.1.15)
   '@tiptap/extension-underline':
     specifier: ^2.1.15
     version: 2.1.15(@tiptap/core@2.1.15)
@@ -3647,8 +3647,8 @@ packages:
       '@tiptap/core': 2.1.15(@tiptap/pm@2.1.15)
     dev: true
 
-  /@tiptap/extension-typography@2.1.15(@tiptap/core@2.1.15):
-    resolution: {integrity: sha512-oZ3KLj6VDHlFGhDHMGbj2u6JL3Svk3E3xMQD/ON3/WyHm0gv8L0i373cn1DgBddnLJTcYvQIDl/q1i1y3lCSng==}
+  /@tiptap/extension-typography@2.1.16(@tiptap/core@2.1.15):
+    resolution: {integrity: sha512-1lQzgcnviYV/wm78YB4CIuVI4is0bLGxxEjrDjOexEYINbBJAEESYeUZjwVyU7VKJRWO/0rpwtFJ7D/BVibMkQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
