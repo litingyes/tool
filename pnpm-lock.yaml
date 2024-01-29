@@ -45,8 +45,8 @@ devDependencies:
     specifier: ^2.2.0
     version: 2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)
   '@tiptap/extension-floating-menu':
-    specifier: ^2.1.16
-    version: 2.1.16(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)
+    specifier: ^2.2.0
+    version: 2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)
   '@tiptap/extension-highlight':
     specifier: ^2.2.0
     version: 2.2.0(@tiptap/core@2.2.0)
@@ -3399,17 +3399,6 @@ packages:
     dependencies:
       '@tiptap/core': 2.2.0(@tiptap/pm@2.2.0)
       '@tiptap/pm': 2.2.0
-    dev: true
-
-  /@tiptap/extension-floating-menu@2.1.16(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0):
-    resolution: {integrity: sha512-VBT4HBhkKr9S1VExyTb/qfQyZ5F0VJLasUoH8E4kdq3deCeifmTTIOukuXK5QbicFHVQmY2epeU6+w5c/bAcHQ==}
-    peerDependencies:
-      '@tiptap/core': ^2.0.0
-      '@tiptap/pm': ^2.0.0
-    dependencies:
-      '@tiptap/core': 2.2.0(@tiptap/pm@2.2.0)
-      '@tiptap/pm': 2.2.0
-      tippy.js: 6.3.7
     dev: true
 
   /@tiptap/extension-floating-menu@2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0):
