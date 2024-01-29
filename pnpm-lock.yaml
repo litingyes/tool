@@ -81,8 +81,8 @@ devDependencies:
     specifier: ^2.2.0
     version: 2.2.0(@tiptap/core@2.1.16)(@tiptap/pm@2.1.16)
   '@tiptap/extension-task-list':
-    specifier: ^2.1.16
-    version: 2.1.16(@tiptap/core@2.1.16)
+    specifier: ^2.2.0
+    version: 2.2.0(@tiptap/core@2.1.16)
   '@tiptap/extension-text-align':
     specifier: ^2.1.16
     version: 2.1.16(@tiptap/core@2.1.16)
@@ -3606,8 +3606,8 @@ packages:
       '@tiptap/pm': 2.1.16
     dev: true
 
-  /@tiptap/extension-task-list@2.1.16(@tiptap/core@2.1.16):
-    resolution: {integrity: sha512-NZzjK8SN3LZcjnwHLiCYPrNRs4nqax+b36GqB1o4GC1Vqmkt8ynW+MII09i08LhBYVJSX2yzRKPE2RDhCeAWig==}
+  /@tiptap/extension-task-list@2.2.0(@tiptap/core@2.1.16):
+    resolution: {integrity: sha512-+W4uVup/v/P67sSJ8bAbbR7lCKZl+Jrm66lIV4etGjhO9Hs2ZnV9KrAjTHh8SbZZSNybDTOOaV74Wo73KqoVUQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
