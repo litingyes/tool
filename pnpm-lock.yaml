@@ -51,8 +51,8 @@ devDependencies:
     specifier: ^2.1.16
     version: 2.1.16(@tiptap/core@2.1.16)
   '@tiptap/extension-image':
-    specifier: ^2.1.16
-    version: 2.1.16(@tiptap/core@2.1.16)
+    specifier: ^2.2.0
+    version: 2.2.0(@tiptap/core@2.1.16)
   '@tiptap/extension-link':
     specifier: ^2.1.16
     version: 2.1.16(@tiptap/core@2.1.16)(@tiptap/pm@2.1.16)
@@ -3432,8 +3432,8 @@ packages:
       '@tiptap/pm': 2.1.16
     dev: true
 
-  /@tiptap/extension-image@2.1.16(@tiptap/core@2.1.16):
-    resolution: {integrity: sha512-idvmJzdG/u9YDt/GOCvgQMB1p/GZbBqb2Spk8BhXHoBGHR4zFo609ExccXYKR4UWs0iTACDq80VwJvfHa8XYKw==}
+  /@tiptap/extension-image@2.2.0(@tiptap/core@2.1.16):
+    resolution: {integrity: sha512-xP+V+n6GQ/iHbDzX7wKy++klTUFQsvrtOtS2cWJCmUUH9qHJ2vHoaLEKAaroIaAaq/QMroCuEItpbevC3hbnpg==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
