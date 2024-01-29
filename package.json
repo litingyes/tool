@@ -30,7 +30,7 @@
     "@nuxtjs/fontaine": "^0.4.1",
     "@nuxtjs/i18n": "8.0.0",
     "@nuxtjs/stylelint-module": "^5.1.0",
-    "@tiptap/extension-character-count": "^2.1.16",
+    "@tiptap/extension-character-count": "^2.2.0",
     "@tiptap/extension-floating-menu": "^2.1.16",
     "@tiptap/extension-highlight": "^2.1.16",
     "@tiptap/extension-image": "^2.2.0",
