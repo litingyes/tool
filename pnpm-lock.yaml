@@ -102,8 +102,8 @@ devDependencies:
     specifier: ^2.2.0
     version: 2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)
   '@tiptap/vue-3':
-    specifier: ^2.2.0
-    version: 2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)(vue@3.4.15)
+    specifier: ^2.2.1
+    version: 2.2.1(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)(vue@3.4.15)
   '@types/node':
     specifier: ^18
     version: 18.19.10
@@ -3336,8 +3336,8 @@ packages:
       '@tiptap/core': 2.2.0(@tiptap/pm@2.2.0)
     dev: true
 
-  /@tiptap/extension-bubble-menu@2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0):
-    resolution: {integrity: sha512-ukwFb9wbwA/GkM7wGGv/ScKRBn4QSZkNzObhU6TgDKISjo1b7gGaUdC6gPoAFtQamCOCL8559PJIXXJ4wtL5/w==}
+  /@tiptap/extension-bubble-menu@2.2.1(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0):
+    resolution: {integrity: sha512-FQO1CDS777E34T8jwnYDBz3VmGyVzv3Olj0o01c3fHR7OSnA7urAxx+z9Z4CWqUJhRMV9td0v0wiZjQ4q1DdYw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -3403,6 +3403,17 @@ packages:
 
   /@tiptap/extension-floating-menu@2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0):
     resolution: {integrity: sha512-psvRz/69Q/DnVHABYwMKlZv2C6AuLmcQQKTrEBHZKz7OX6E3pLveRVIjaetFg8jci8ZeNMPupKmeLzBVuN8U2A==}
+    peerDependencies:
+      '@tiptap/core': ^2.0.0
+      '@tiptap/pm': ^2.0.0
+    dependencies:
+      '@tiptap/core': 2.2.0(@tiptap/pm@2.2.0)
+      '@tiptap/pm': 2.2.0
+      tippy.js: 6.3.7
+    dev: true
+
+  /@tiptap/extension-floating-menu@2.2.1(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0):
+    resolution: {integrity: sha512-2lQaEIUbexw8yCGDLxNqhCwpZMoclnDtAdObDKCgufLcA+tVSdVirfcx7HJZ4kmRXmUhdG3uvawQVchZJ7FGiw==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
@@ -3694,16 +3705,16 @@ packages:
       '@tiptap/pm': 2.2.0
     dev: true
 
-  /@tiptap/vue-3@2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)(vue@3.4.15):
-    resolution: {integrity: sha512-S61ENjHm8Y0agwGFw+BZBVuZpL7/rPtMQCOL0eaDrJbqLi6nwFhhWzZ71zis0EgU310NwPCQ+j3XHD5hj1R3gQ==}
+  /@tiptap/vue-3@2.2.1(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)(vue@3.4.15):
+    resolution: {integrity: sha512-vRYTPnpKJBrpQEjj+7WDx7AKcjNskOlHMEfgCPlwFMG6o1dwbDDtXWj9U53SyiZfitRkudb7WAbX0RyleBjdIQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
       vue: ^3.0.0
     dependencies:
       '@tiptap/core': 2.2.0(@tiptap/pm@2.2.0)
-      '@tiptap/extension-bubble-menu': 2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)
-      '@tiptap/extension-floating-menu': 2.2.0(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)
+      '@tiptap/extension-bubble-menu': 2.2.1(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)
+      '@tiptap/extension-floating-menu': 2.2.1(@tiptap/core@2.2.0)(@tiptap/pm@2.2.0)
       '@tiptap/pm': 2.2.0
       vue: 3.4.15(typescript@5.3.3)
     dev: true
