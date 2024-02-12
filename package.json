@@ -48,7 +48,7 @@
     "@tiptap/extension-typography": "^2.2.1",
     "@tiptap/extension-underline": "^2.2.0",
     "@tiptap/pm": "^2.2.2",
-    "@tiptap/starter-kit": "^2.2.0",
+    "@tiptap/starter-kit": "^2.2.2",
     "@tiptap/suggestion": "^2.2.0",
     "@tiptap/vue-3": "^2.2.1",
     "@types/node": "^18",
