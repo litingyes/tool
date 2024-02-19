@@ -72,8 +72,8 @@ devDependencies:
     specifier: ^2.2.3
     version: 2.2.3(@tiptap/core@2.2.2)
   '@tiptap/extension-table-header':
-    specifier: ^2.2.2
-    version: 2.2.2(@tiptap/core@2.2.2)
+    specifier: ^2.2.3
+    version: 2.2.3(@tiptap/core@2.2.2)
   '@tiptap/extension-table-row':
     specifier: ^2.2.2
     version: 2.2.2(@tiptap/core@2.2.2)
@@ -3938,8 +3938,8 @@ packages:
       '@tiptap/core': 2.2.2(@tiptap/pm@2.2.2)
     dev: true
 
-  /@tiptap/extension-table-header@2.2.2(@tiptap/core@2.2.2):
-    resolution: {integrity: sha512-rJUJkHJpTgSaYTRCDm8TA5XDy6IXgFIID/m0UAPaZ9i/GWj53BSBYYidu89uLjxssvr0VcGtGWdQlGmlIib3CQ==}
+  /@tiptap/extension-table-header@2.2.3(@tiptap/core@2.2.2):
+    resolution: {integrity: sha512-tuuGjfmwuSEHbSMqFMG7BsfgL89KUIvUecukesrs10GJXKh96LKPpFk7JeM0rXAOIDiR6DLF8gfhF1a+OlBpWQ==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
     dependencies:
