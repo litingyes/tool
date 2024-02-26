@@ -50,7 +50,7 @@
     "@tiptap/pm": "^2.2.4",
     "@tiptap/starter-kit": "^2.2.4",
     "@tiptap/suggestion": "^2.2.4",
-    "@tiptap/vue-3": "^2.2.3",
+    "@tiptap/vue-3": "^2.2.4",
     "@types/node": "^18",
     "@vueuse/core": "^10.8.0",
     "@vueuse/nuxt": "^10.8.0",
