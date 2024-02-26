@@ -42,8 +42,8 @@ devDependencies:
     specifier: ^5.2.0
     version: 5.2.0(postcss@8.4.35)(rollup@3.29.4)(stylelint@15.11.0)(vite@4.5.2)(webpack@5.85.0)
   '@tiptap/extension-character-count':
-    specifier: ^2.2.3
-    version: 2.2.3(@tiptap/core@2.2.3)(@tiptap/pm@2.2.3)
+    specifier: ^2.2.4
+    version: 2.2.4(@tiptap/core@2.2.3)(@tiptap/pm@2.2.3)
   '@tiptap/extension-floating-menu':
     specifier: ^2.2.3
     version: 2.2.3(@tiptap/core@2.2.3)(@tiptap/pm@2.2.3)
@@ -3558,8 +3558,8 @@ packages:
       '@tiptap/core': 2.2.3(@tiptap/pm@2.2.3)
     dev: true
 
-  /@tiptap/extension-character-count@2.2.3(@tiptap/core@2.2.3)(@tiptap/pm@2.2.3):
-    resolution: {integrity: sha512-agLFrbeJHPBc5NbjP6Lzq1Rr3UCLBnK3rwH55ynLQZlTIejlLiMJE02js6tTttqHPkgu3qQ/SCcl2AesEKErGA==}
+  /@tiptap/extension-character-count@2.2.4(@tiptap/core@2.2.3)(@tiptap/pm@2.2.3):
+    resolution: {integrity: sha512-gUeWiIB3Y2+6CuEUq2hKS7BEgvj7l6zAx/xPWlKCbfIyhpQh58m7QLB2OEmdw1EJnGA9VgxqrqOkvdZp8E6vEA==}
     peerDependencies:
       '@tiptap/core': ^2.0.0
       '@tiptap/pm': ^2.0.0
