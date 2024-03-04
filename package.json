@@ -52,7 +52,7 @@
     "@tiptap/suggestion": "^2.2.4",
     "@tiptap/vue-3": "^2.2.4",
     "@types/node": "^18",
-    "@vueuse/core": "^10.8.0",
+    "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "commitizen": "^4.3.0",
     "eslint": "^8.57.0",
