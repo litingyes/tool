@@ -60,7 +60,7 @@
     "inquirer": "8",
     "lint-staged": "^13.3.0",
     "markdown-it": "^13.0.2",
-    "nuxt": "^3.10.3",
+    "nuxt": "^3.11.1",
     "nuxt-lodash": "^2.5.3",
     "sass": "^1.71.1",
     "simple-git-hooks": "^2.10.0",
